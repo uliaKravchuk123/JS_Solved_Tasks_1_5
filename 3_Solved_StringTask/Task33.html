@@ -1,0 +1,43 @@
+// Task 33:
+// ДанЫ 2 числа и операция, которую необходимо произвести. Напишите функцию, которая дает решение в развернутом виде
+// Например:  2, 3, +  =>  "Решение: 2 + 3 = 5"
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task33 = (a, b, sumb) => { 
+               switch (sumb) {
+                case '+' :
+                    return a + " + " + b + " = " + (a + b);
+                    break;
+                case '-' :
+                    return a + " - " + b + " = " + (a - b);
+                    break;
+                case '/' :
+                    return a + " / " + b + " = " + (a/b);
+                    break;
+                case '*' :
+                    return a + " * " + b + " = " + (a * b);
+                    break;
+                
+               }
+            }
+
+            alert(task33(5, 10, '+')); //5 + 10 = 15
+            alert(task33(5, 10, '-')); //5 - 10 = -5
+            alert(task33(5, 10, '*')); //5 * 10 = 50
+            alert(task33(5, 10, '/')); //5 / 10 = 0.5
+
+
+
+
+        </script>
+
+    </body>
+
+</html>

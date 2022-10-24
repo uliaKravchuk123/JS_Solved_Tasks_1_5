@@ -1,0 +1,40 @@
+// Task 39:
+// Дана строка. Напишите функцию, которая возвращает символ, который встречается в строке наибольшее количество раз
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task39 = (string) => { 
+                let maxCount = 0;
+                let maxSumb = "";
+                let currentSumb;
+                let count = 0;
+                for (let i = 0; i < string.length; i++) {
+                    currentSumb = string[i];
+
+                    for (let j = 0; j < string.length; j++) {
+                        if (string.indexOf(currentSumb, j) > -1) count++;
+                    }
+
+                    maxCount = Math.max(maxCount, count);
+                    count = 0;
+                    
+                }
+                return maxCount + " " + maxSumb;
+            }
+
+            alert(task39('  Mother   ,  father and  me  .   Who   ?    Me  !! ')); //" "
+            alert(task39('First session of the SC training')); //" "
+
+
+
+        </script>
+
+    </body>
+
+</html>

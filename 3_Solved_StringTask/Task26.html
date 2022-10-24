@@ -1,0 +1,28 @@
+// Task 26:
+// Дана строка. Напишите функцию, которая возвращает данную строку n раз (по умолчанию 1)
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task26 = (string, n) => { 
+                let newString = string;
+
+                for(let i = 1; i < n; i ++) {
+                    newString += string;
+                }
+                
+                return newString;
+            }
+
+            alert(task26('Honor', 4)); //"HonorHonorHonorHonor"
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,26 @@
+// Task 34:
+// Дана строка. Напишите функцию, которая ищет слово без учета регистра.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task34 = (string, substr) => { 
+                let stringLower = string.toLowerCase();
+                let substrLower = substr.toLowerCase();
+
+                return stringLower.indexOf(substrLower);
+            }
+
+            alert(task34('Every hunter wishes to know 123', 'hun')); //6
+
+
+        </script>
+
+    </body>
+
+</html>

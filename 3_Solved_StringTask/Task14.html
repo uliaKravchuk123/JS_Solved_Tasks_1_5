@@ -1,0 +1,33 @@
+// Task 14:
+//Напишите функцию addZeros, которая дополняет нулями до указаной длины числовое значение с дополнительным знаком «+» или « -« в зависимости от передаваемого аргумента.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let addZeros = (number, len, sign) => { 
+                let numZeros = len - (number + "").length;
+
+                for (let i = 1; i <= numZeros; i++) {
+                    number = "0" + number;
+                }
+
+                if (sign == null) sign = "";
+                number = sign + number;
+                
+                return number;
+                
+            }
+
+            alert(addZeros(145, 5)); // 00145
+            alert(addZeros(99, 9, '-')); // -000000099
+
+        </script>
+
+    </body>
+
+</html>

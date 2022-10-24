@@ -1,0 +1,24 @@
+// Task 4:
+// Дана строка. Если длина строки меньше 10 символов, то вывести ее, иначе вывести ошибку.
+// Реализовать метод в 1-у строку
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task4 = (string) => { 
+                return string.length < 10 ? string : "Error: length of this string >= 10!!!" 
+            }
+
+            alert(task4("How longword how how many H here")); //"Error: length of this string >= 10!!!"
+            alert(task4("How")); //How
+        </script>
+
+    </body>
+
+</html>

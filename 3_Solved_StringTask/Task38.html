@@ -1,0 +1,39 @@
+// Task 38:
+// Дана строка. Напишите функцию, которая убирает лишнии пробелы из строки.
+// Например:  "  Mother   ,  father and . " => "Mother ,  father and."
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task38 = (string) => { 
+                let prevSymb = " ";
+                for (let i = 0; i < string.length; i++) {
+                    if ((string[i] == " " && prevSymb == " ") || (string[i] == " " && i == string.length - 1)) { // удалить все повторяющиеся пробелы
+                        string = string.slice(0, i) + string.slice(i + 1, string.length);
+                        i--;
+                    }
+
+                    if ((string[i] == "," || string[i] == "." || string[i] == "!" || string[i] == "?") && prevSymb == " ") { // удалить пробелы перед знаками препинания
+                        string = string.slice(0, i - 1) + string.slice(i, string.length);
+                    } 
+
+                    if (i >= 0) prevSymb = string[i]; // иначе после удаления первого пробела prevSymb станет undefined
+
+                }
+                return string;
+            }
+
+            alert(task38('  Mother   ,  father and  me  .   Who   ?    Me  !! ')); //"Mother, father and me. Who? Me!!"
+
+
+
+        </script>
+
+    </body>
+
+</html>

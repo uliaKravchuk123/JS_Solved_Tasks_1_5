@@ -1,0 +1,25 @@
+// Task 17:
+//"Напишите функцию, которая вовращает имя файла из полного пути к файлу.
+//E.g:  ""/D:/user/test/file.txt""   =>  file.txt"
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task17 = (string) => { 
+                let index = string.lastIndexOf("/");
+                return string.slice(index + 1, string.length);
+            }
+
+            alert(task17('/D:/user/test/file.txt')); //"file.txt"
+
+
+        </script>
+
+    </body>
+
+</html>

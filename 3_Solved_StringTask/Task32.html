@@ -1,0 +1,33 @@
+// Task 32:
+// Дана строка. Напишите функцию для удаления несловесных символов (e.g. ~!@ # $% ^ & * () + `- = {} [] | \:";' /?)
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task32 = (string) => { 
+                let index = 0;
+
+                for(let char of string) {
+                    if ((char > " " && char < "0") || (char > "9" && char < 'A') || (char > 'Z' && char < 'a') || char > 'z') {
+                        string = string.slice(0, index) + string.slice(index + 1, string.length);
+                        index--;
+                    };
+                    index++;
+                }
+                return string;
+            }
+
+            alert(task32('Every., -/hunter #!wishes ;:{}to$%^&* know 123')); //Every hunter wishes to know 123
+
+
+
+        </script>
+
+    </body>
+
+</html>

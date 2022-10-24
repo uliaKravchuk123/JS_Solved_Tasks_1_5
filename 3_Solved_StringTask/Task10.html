@@ -1,0 +1,31 @@
+// Task 10:
+//Дана строка 'I-am-a-good-engineer!'. Замените все '-' на '!'
+
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task10 = (string) => { 
+                let count = 0;
+                for(let char of string) {
+                    if (char === '-') {
+                        string = string.slice(0, count) + "!" + string.slice(count + 1, string.length);
+                    };
+                    count++;
+                }
+                return string;
+            }
+
+            alert(task10('I-am-a-good-engineer!')); //3
+
+        </script>
+
+    </body>
+
+</html>

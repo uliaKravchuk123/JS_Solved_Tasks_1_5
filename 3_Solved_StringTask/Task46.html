@@ -1,0 +1,33 @@
+// Task 46:
+//Даны три слова. Напишите функцию, которая возвращает их общие буквы. Повторяющиеся буквы каждого слова не рассматривать.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task46 = (string1, string2, string3) => { 
+                let arr1 = string1.split("");
+                let arr2 = string2.split("");
+                let arr3 = string3.split("");
+                let arrRes = [];
+
+                for(let char of string1) {
+                    if(arr1.includes(char) && arr2.includes(char) && arr3.includes(char) && !arrRes.includes(char)) arrRes.push(char);
+                }
+
+                return arrRes;
+            }
+
+            alert(task46('training', 'bioing', 'merging')); // i,n,g
+
+
+
+        </script>
+
+    </body>
+
+</html>

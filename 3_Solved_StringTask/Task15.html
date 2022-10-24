@@ -1,0 +1,32 @@
+// Task 15:
+//Напишите функцию, которая преобразует строку в CamelCase
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task15 = (string) => { 
+                let index = 0;
+                string = string[0].toLowerCase() + string.slice(1, string.length);
+
+                for(let char of string) {
+                    if (char === ' ' || char === '-') {
+                        string = string.slice(0, index) + string[index + 1].toUpperCase() + string.slice(index + 2, string.length);
+                        index--;
+                    };
+                    index++;
+                }
+                return string;
+            }
+
+            alert(task15('I go to the beach')); //"iGoToTheBeach"
+
+        </script>
+
+    </body>
+
+</html>

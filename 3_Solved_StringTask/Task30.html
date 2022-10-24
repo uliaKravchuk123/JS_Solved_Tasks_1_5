@@ -1,0 +1,25 @@
+// Task 30:
+// Напишите функцию, которая возвращает true если строка заканчивается указанным суффиксом
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task30 = (string, substr) => { 
+                if (string.lastIndexOf(substr, string.length - 1) == (string.length - substr.length)) return true;
+                return false;
+            }
+
+            alert(task30('Take of control of your of inbox of', 'of')); //true
+            alert(task30('Take of control of your of inbox', 'of')); //false
+
+
+        </script>
+
+    </body>
+
+</html>

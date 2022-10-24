@@ -1,0 +1,28 @@
+// Task 28:
+// Напишите функцию, которая удаляет начальные и конечные пробелы из строки
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task28 = (string) => { 
+                while (string[0] === " ") {
+                    string = string.slice(1, string.length - 1);
+                } 
+                while (string[string.length - 1] === " ") {
+                    string = string.slice(0, string.length - 1);
+                } 
+                return string;
+            }
+
+            alert(task28('   Take control of your inbox   ')); //"Take control of your inbox"
+
+        </script>
+
+    </body>
+
+</html>

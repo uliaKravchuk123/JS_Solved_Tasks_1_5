@@ -1,0 +1,32 @@
+// Task 20:
+//Напишите функцию, которая удаляет из строки определенное количество слов
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task20 = (string, number) => { 
+                let count = 0;
+                let index = 0;
+
+                for(let char of string) {
+                    if (char === " ") count++;
+                    if (count == number) return string.slice(index + 1, string.length);
+                    index++;
+                }
+
+                //return string;
+            }
+
+            alert(task20('Honor is earned for each new who joins.', 4)); //"each new who joins."
+
+
+        </script>
+
+    </body>
+
+</html>

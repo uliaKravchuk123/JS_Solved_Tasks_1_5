@@ -1,0 +1,34 @@
+// Task 36:
+// Напишите функцию, которая возвращает уникальный guid (сокращение от «Globally Unique Identifier?») Указанной длины( по уполчанию 32)
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task36 = (len) => { 
+                let guid = "";
+                let chars ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+                let charlen = chars.length;
+                let length = len || 32;
+            
+                for (var i = 0; i < length; i++) {
+                    guid += chars.charAt(Math.floor(Math.random() * charlen));
+                }
+        
+                return guid;
+            }
+
+            alert(task36(10)); //lquCKY9GLf
+            alert(task36()); //etdTvvF3EcvVAzkfkJDnTpJPMiLnPKhL
+
+
+
+        </script>
+
+    </body>
+
+</html>

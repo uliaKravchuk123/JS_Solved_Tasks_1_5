@@ -1,0 +1,28 @@
+// Task 29:
+// Напишите функцию, которая возвращает количество вхождений слово в строке
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task29 = (string, substr) => { 
+                let enterCount = 0;
+                let pos = 0;
+                while (string.indexOf(substr, pos) != -1) {
+                    pos = (string.indexOf(substr, pos) + 1);
+                    enterCount++;
+                }
+                return enterCount;
+            }
+
+            alert(task29('Take of control of your of inbox of', 'of')); //4
+
+        </script>
+
+    </body>
+
+</html>

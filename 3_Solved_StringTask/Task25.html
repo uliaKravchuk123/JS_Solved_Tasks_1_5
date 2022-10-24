@@ -1,0 +1,33 @@
+// Task 25:
+// Дана строка. Напишите функцию, которая преобразует строчные буквы в строчные, а строчные - в прописные
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task25 = (string) => { 
+                let index = 0;
+            
+                for (let char of string){
+                   if (char >= 'A' && char <= 'Z') {
+                    string = string.slice(0, index) + char.toLowerCase() + string.slice(index + 1, string.length);
+                   }
+                   if (char >= 'a' && char <= 'z') {
+                    string = string.slice(0, index) + char.toUpperCase() + string.slice(index + 1, string.length);
+                   }
+                   index++;
+                }
+                return string;
+            }
+
+            alert(task25('Honor Is Earned For Each New Who Joins.')); //"hONOR iS eARNED fOR eACH nEW wHO jOINS."
+
+        </script>
+
+    </body>
+
+</html>

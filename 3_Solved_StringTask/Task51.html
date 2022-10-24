@@ -1,0 +1,33 @@
+//Task 51
+// Напишите функцию, которая будет принимать на вход строку с надписью для гравировки. На выход функция отдает стоимость для гравировки. 
+//Если строка пустая или равна undefined, то цена гравировки равна 0. Цена за 1 символ = 2$
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task51 = (string) => { 
+                if (string == null) return 0;
+                let price = 0;
+                for(let i = 0; i < string.length; i++) {
+                    price += 2;
+                }
+                return price;
+            }
+
+            alert(task51('My bill so high')); // 30
+            alert(task51('')); // 0
+            alert(task51(undefined)); // 0
+            alert(task51(0)); // 0
+
+
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,31 @@
+// Task 12:
+// Дана строка в camel case ( e.g.  "IGoToTheBeach!"), преобразуйте в предложение, каждое слово должно быть разделено пробелом, 
+//только первое слово должно начинаться с заглавной буквы
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task12 = (string) => { 
+                let index = 0;
+
+                for(let i = 1; i < string.length; i++) {
+                    if (string[i] < 'a' && string[i] >= 'A') {
+                        string = string.slice(0, index + 1) + " " + string[index+1].toLowerCase() + string.slice(index + 2, string.length);
+                    };
+                    index++;
+                }
+                return string;
+            }
+
+            alert(task12('IGoToTheBeach!')); //"I go to the beach!"
+
+        </script>
+
+    </body>
+
+</html>

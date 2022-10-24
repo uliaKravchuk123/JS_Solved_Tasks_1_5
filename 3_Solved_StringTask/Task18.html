@@ -1,0 +1,25 @@
+// Task 18:
+//Напишите функцию, которая возвращает строку, очищенную от всех HTML-тегов:
+//<figcaption class=""block w-full""><h5 class=""text-ui-text-hc my-0 font-bold""></h5><div>Honor is earned for each new who joins.</div><a class=""btn is-dark mt-15px"" id=""tell_me_more_referrals""></figcaption>    => Honor is earned for each new  who joins."
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';  
+
+            function cutTegs(html) {
+                 let text = html.replace(/(<([^>]+)>)/ig, '')
+                 return text;
+             }
+             let html = `<figcaption class=""block w-full""><h5 class=""text-ui-text-hc my-0 font-bold""></h5><div>Honor is earned for each new who joins.</div><a class=""btn is-dark mt-15px"" id=""tell_me_more_referrals""></figcaption>`;
+             alert(cutTegs(html)); // 'Honor is earned for each new  who joins.'
+
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,31 @@
+// Task 13:
+//Дана строка "every., -/ hunter #! wishes ;: {} to $ % ^ & * know";  .  Удалить все  не буквенно-цифровых символов.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task13 = (string) => { 
+                let index = 0;
+
+                for(let char of string) {
+                    if (char < "0" || (char > "9" && char < 'A') || (char > 'Z' && char < 'a') || char > 'z') {
+                        string = string.slice(0, index) + string.slice(index + 1, string.length);
+                        index--;
+                    };
+                    index++;
+                }
+                return string;
+            }
+
+            alert(task13('1every., -/ 2hunter #! wishes ;: 3{} to $ % ^ & * 4know')); //"1every2hunterwishes3to4know"
+
+        </script>
+
+    </body>
+
+</html>

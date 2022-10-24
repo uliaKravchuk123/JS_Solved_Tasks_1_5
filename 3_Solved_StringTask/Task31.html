@@ -1,0 +1,30 @@
+// Task 31:
+// Дана строка. Напишите функцию, которая удаляет определенный символ из строки
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task31 = (string, sumb) => { 
+                for (let i = 0; i < string.length; i++) {
+                    if (string[i] == sumb) {
+                        string = string.slice(0, i) + string.slice(i + 1, string.length);
+                        i--;
+                    }
+                }
+                return string;
+            }
+
+            alert(task31('TakPPe control oPf youPr inboPx', 'P')); //true
+
+
+
+        </script>
+
+    </body>
+
+</html>

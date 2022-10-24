@@ -1,0 +1,24 @@
+// Task 8:
+// В переменной date лежит дата в формате '2019-12-16'. Преобразуйте эту дату в формат '16/12/2019'.
+
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task8 = (string) => { 
+                return  string.substr(8, 2) + '/' + string.substr(5, 2) + '/' + string.substr(0, 4); 
+            }
+
+            alert(task8('2019-12-16')); //"16/12/2019"
+
+        </script>
+
+    </body>
+
+</html>

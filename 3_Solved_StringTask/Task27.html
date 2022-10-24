@@ -1,0 +1,25 @@
+// Task 27:
+// Напишите функцию, которая вставляет строки в строку в определенной позиции (по умолчанию 1).
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task27 = (string, substr, pos) => { 
+                if (pos == null) pos = 1; 
+                string = string.slice(0, pos) + substr + string.slice(pos, string.length)
+                return string;
+            }
+
+            alert(task27('Honor', 'Forse', 3)); //"HonForseor"
+            alert(task27('Honor', 'Forse')); //"HForseonor"
+
+        </script>
+
+    </body>
+
+</html>

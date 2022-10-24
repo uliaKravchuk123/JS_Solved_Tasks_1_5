@@ -1,0 +1,25 @@
+// Task 24:
+// Дана строка с почтой. Напишите функцию, которая заменяет все символы после 3-го в имени на "..."
+// Например: late_fire@example.com  =>  lat...@example.com
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task24 = (string) => { 
+                let indexDog = string.indexOf("@");
+                let answer = string.slice(0, 3) + "..." + string.slice(indexDog, string.length);
+                return answer;
+            }
+
+            alert(task24('late_fire@example.com')); //"lat...@example.com"
+
+        </script>
+
+    </body>
+
+</html>

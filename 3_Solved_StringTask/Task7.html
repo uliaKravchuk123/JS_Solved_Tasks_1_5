@@ -1,0 +1,36 @@
+// Task 7:
+// Дана строка 'I need icecream'. Вырежите из нее слово 'icecream'. тремя разными способами
+
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task7_1 = (string) => { 
+                let index = string.indexOf('icecream');
+                return string.slice(0, index);
+            }
+
+            let task7_2 = (string) => { 
+                let index = string.indexOf('icecream');
+               return string.substring(index, 0);
+           }
+
+           let task7_3 = (string) => { 
+                let index = string.indexOf('icecream');
+               return string.substr(0, 7);
+           }
+
+            alert(task7_1('I need icecream')); //"I need "
+            alert(task7_2('I need icecream')); //"I need "
+            alert(task7_3('I need icecream')); //"I need "
+        </script>
+
+    </body>
+
+</html>

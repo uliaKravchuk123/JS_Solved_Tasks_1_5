@@ -1,0 +1,33 @@
+// Task 22:
+//Напишите функцию, которая возвращает строку, очищенную от слов-дупликатов, т.е. каждое слово должно повторяться не более одного раза.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task22 = (string) => { 
+                let array = string.split(' ');
+
+                for (let i = 0; i < array.length; i++){
+                    let firstIndex, secondIndex;
+                    firstIndex = string.indexOf(array[i]);
+                    secondIndex = string.indexOf(array[i], firstIndex + 1);
+
+                    if (secondIndex > firstIndex) {
+                        string = string.slice(0, secondIndex) + string.slice((secondIndex + array[i].length + 1), string.length);
+                    }
+                }
+                return string;
+            }
+
+            alert(task22('Honor joins for is each earned for is each new who for joins.')); //"Honor joins for is each earned new who "
+
+        </script>
+
+    </body>
+
+</html>

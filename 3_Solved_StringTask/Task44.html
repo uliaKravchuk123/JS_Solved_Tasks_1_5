@@ -1,0 +1,35 @@
+// Task 44:
+// Напишите функцию, которая эмулирует работу таймера. 
+// Т.е выводи в консоль каждую секунду
+//    "14:37:44";
+//    "14:37:42";
+//    "14:37:41";
+// На вход передается строка с количеством секунд
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            function task44(seconds) { 
+                let timer = setInterval(function() {
+                        let hours = Math.trunc(seconds / 3600);
+                        let minutes = Math.trunc(seconds % 3600 / 60);
+                        let second = seconds % 3600 % 60;
+                        console.log(hours + ":" + minutes + ":" + second);
+                        seconds--;
+                }, 1000);
+            }
+
+            task44('3600'); //
+
+
+
+        </script>
+
+    </body>
+
+</html>

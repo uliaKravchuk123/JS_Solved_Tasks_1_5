@@ -1,0 +1,48 @@
+// Task 48:
+//Напишите функцию, которая проверяет валидный ли емейл. Электронные письма должны иметь имя пользователя, состоящее только из букв и цифр английского алфавита, 
+//знака «@» и доменного имени после него. Доменое имя должно состоять только из 2 строк содержащих только буквы и цифры, разделенных одной точкой  (e.g mail.ru).
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task48 = (string) => { 
+                let dogIndex = string.indexOf("@");
+                let pointIndex = string.indexOf(".");
+
+                if(pointIndex - dogIndex < 1 || dogIndex < 1 || pointIndex <= dogIndex + 1) return false;
+
+                for(let char of string.slice(0, dogIndex)) {
+                    if(char < "0" || (char > "9" && char < "A") || (char > "Z" && char < "a") || char > "z" ) return false;
+                }
+
+                for(let char of string.slice(dogIndex + 1, pointIndex)) {
+                    if(char < "0" || (char > "9" && char < "A") || (char > "Z" && char < "a") || char > "z" ) return false;
+                }
+
+                for(let char of string.slice(pointIndex + 1, string.length)) {
+                    if(char < "0" || (char > "9" && char < "A") || (char > "Z" && char < "a") || char > "z" ) return false;
+                }
+
+                return true;
+
+            }
+
+            alert(task48('testaccount@cwtest.com')); // true
+            alert(task48('testапапваaccount@cwtest.com')); // false
+            alert(task48('testaccount@№№test.com')); // false
+            alert(task48('testaccount@.com')); // false
+            alert(task48('@cwtest.com')); // false
+            alert(task48('testaccount@cwtest')); // false
+
+
+
+        </script>
+
+    </body>
+
+</html>

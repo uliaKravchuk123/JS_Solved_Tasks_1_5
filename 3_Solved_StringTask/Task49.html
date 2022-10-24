@@ -1,0 +1,43 @@
+// Task 49:
+/* Напишите функцию, которая автоматически заполняет форму для ленивого клиента. Клиент предоставит вам 3 элемента данных о себе — его имя пользователя, адрес электронной почты и номер телефона. После этих 3 элементов вам будет предоставлена форма в виде текста с несколькими заполнителями. Вы должны заменить каждый допустимый заполнитель соответствующим значением. Заполнители имеют специальные символы и могут содержать только буквы английского алфавита. Существует 3 типа допустимых заполнителей:
+    <!{letters}!> - поставить данное имя пользователя вместо этого
+    <@{letters}@> - поставить указанный адрес электронной почты вместо этого
+    <+{letters}+> - поставить указанный адрес электронной почты вместо этого
+
+Пример текста:
+    Hello, <!username!>!
+    Welcome to your Personal profile.
+    Here you can modify your profile freely.
+    Your current username is: <!fdsfs!>. Would you like to change that? (Y/N)
+    Your current email is: <@DasEmail@>. Would you like to change that? (Y/N)
+    Your current phone number is: <+number+>. Would you like to change that? (Y/N)
+*/
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task49 = () => { 
+                let username = prompt('Enter your username', '<!username!>');
+                let email = prompt('Enter your email', '<@email@>');
+                let number = prompt('Enter your number', '<+number+>');
+
+                alert(`Hello, ${username}! \nWelcome to your Personal profile. \nHere you can modify your profile freely.`);
+                if(confirm(`Your current username is: ${email}. Would you like to change that? (Y/N)`)) email = prompt('Enter your email', email);
+                if(confirm(`Your current phone number is: ${number}. Would you like to change that? (Y/N)`)) number = prompt('Enter your number', number);
+
+            }
+
+            task49(); // true
+           
+
+
+        </script>
+
+    </body>
+
+</html>

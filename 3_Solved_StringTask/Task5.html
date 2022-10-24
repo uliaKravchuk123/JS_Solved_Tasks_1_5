@@ -1,0 +1,24 @@
+// Task 5:
+// Дана строка. Если длина строки меньше 10 символов, то вывести его, иначе вывести 10 символов и '...'.
+// Реализовать метод в 1-у строку
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task5 = (string) => { 
+                return string.length < 10 ? string : string.slice(0, 10) + "...";
+            }
+
+            alert(task5("How longword how how many H here")); //How longwo...
+            alert(task5("How")); //How
+        </script>
+
+    </body>
+
+</html>

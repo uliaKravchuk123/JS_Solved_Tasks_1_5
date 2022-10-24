@@ -1,0 +1,38 @@
+// Task 19:
+//Напишите функцию , которая удаляет все лишние пробелы из строки str:  "     Honor    is earned   for   each new  who joins.   "
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task19 = (string) => { 
+                let index = 0;
+                let previousChar = "";
+
+                for(let char of string) {
+                    if (char === " " && char === previousChar) {
+                        string = string.slice(0, index) + string.slice(index + 1, string.length);
+                        index--;
+                    };
+                    previousChar = char;
+                    index++;
+                }
+
+                if (string[0] === " ") string = string.slice(1, string.length);
+                if (string[string.length - 1] === " ") string = string.slice(0, string.length - 1);
+
+
+                return string;
+            }
+
+            alert(task19('     Honor    is earned   for   each new  who joins.   ')); //"Honor is earned for each new who joins."
+
+
+        </script>
+
+    </body>
+
+</html>

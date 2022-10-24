@@ -1,0 +1,41 @@
+// Task 47:
+//Дано предложение. Напишите функцию, которая возвращает:
+//а) его слова, начинающиеся и оканчивающиеся на одну и ту же букву;
+//б) его слова, которые содержат ровно три буквы е;
+//в) его слова, которые содержат хотя бы одну букву о.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task47 = (string) => { 
+                let array = string.split(" ");
+                let resultA = [];
+                let resultB = [];
+                let resultV = [];
+
+                for(let arr of array) {
+                    if(arr[0].toLowerCase() == arr[arr.length-1].toLowerCase()) resultA.push(arr);
+                    if(arr.split("").includes("o") || arr.split("").includes("O")) resultV.push(arr);
+                    let count = 0;
+                    for(let i = 0; i < arr.length; i++) {
+                        if(arr[i] == "e" || arr[i] == "E") count++;
+                    }
+                    if(count == 3) resultB.push(arr);
+                }
+                return "a) " + resultA + "\n" + "б) " + resultB + "\n" + "в) " + resultV;
+            }
+
+            alert(task47('Firstf esessione of the SC Etraieninge These are different approaches and the implementation of the feature depends on this.')); //
+
+
+
+        </script>
+
+    </body>
+
+</html>

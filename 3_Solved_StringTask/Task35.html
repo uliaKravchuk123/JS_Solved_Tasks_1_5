@@ -1,0 +1,25 @@
+// Task 35:
+// Дана строка. Напишите функцию, которая проверяет, является ли символ в указанном индексе строчным
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task35 = (string, ind) => { 
+                return (string[ind] >= 'a' && string[ind] <= 'z') ? true : false;
+            }
+
+            alert(task35('Every hunter wishes to know 123', 6)); //true
+            alert(task35('EvEry hunter Wishes to know 123', 2)); //false
+
+
+
+        </script>
+
+    </body>
+
+</html>

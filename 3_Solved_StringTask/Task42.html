@@ -1,0 +1,29 @@
+// Task 42:
+// Дана строка.  Напишите функцию, которая подсчитывает количество гласных в строке
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task42 = (string) => { 
+                let arr = ["A", "a", "E", "e", "I", "i", "O", "o", "U", "u", "Y", "y"];
+                let count = 0;
+                for (let char of string) {
+                    if (arr.includes(char)) count++;
+                }
+                return count;
+            }
+
+            alert(task42('First session of the SC training')); // 9
+
+
+
+        </script>
+
+    </body>
+
+</html>

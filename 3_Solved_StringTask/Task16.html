@@ -1,0 +1,30 @@
+// Task 16:
+//Напишите функцию, которая преобразует строку из CamelCase в snake_case, при котором несколько слов разделяются символом подчеркивания (_), причём каждое слово пишется с маленькой буквы.
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task16 = (string) => { 
+                let index = 0;
+
+                for(let char of string) {
+                    if (char < 'a') {
+                        string = string.slice(0, index) + "_" + string[index].toLowerCase() + string.slice(index + 1, string.length);
+                        index++;
+                    };
+                    index++;
+                }
+                return string;
+            }
+
+            alert(task16('iGoToTheBeach')); //"i_go_to_the_beach"
+
+        </script>
+
+    </body>
+
+</html>

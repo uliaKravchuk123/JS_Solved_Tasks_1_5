@@ -1,0 +1,29 @@
+// Task 3:
+//определить длину самого длинного слова в строке
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task3 = (stringWords) => { 
+                let maxLength = 0;
+                let words = stringWords.split(" ");
+
+                for (let str of words) {
+                    maxLength = Math.max(str.length, maxLength);
+                }
+
+                return maxLength; 
+            }
+
+            alert(task3("How longword how how many H here")); //8
+    
+        </script>
+
+    </body>
+
+</html>

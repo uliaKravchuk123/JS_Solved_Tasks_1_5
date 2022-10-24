@@ -1,0 +1,28 @@
+//Task 1:
+// подсчитать кол-во вхождений символа "h" в строке
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task1 = (hString) => { 
+                let hCount = 0;
+
+                for (let char of hString) {
+                    if (char === "h") hCount++;
+                }
+              
+               return hCount; 
+            }
+
+            alert(task1("How how how many H here")); //3
+    
+        </script>
+
+    </body>
+
+</html>

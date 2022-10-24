@@ -1,0 +1,35 @@
+// Task 40:
+// Дана строка. Напишите функцию, которая возвращает символы строки и количество раз, которое они встречаются в данной строке
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task40 = (string) => { 
+                let stringSorted = string.split(""). sort().join("");
+                let count = 0;
+                let currentChar = stringSorted[0];
+                for (let i = 0; i < stringSorted.length; i++) {
+                    if (stringSorted[i] == currentChar) count++;
+                    else {
+                        if (count == 1) alert("Character \"" + currentChar + "\" we see " + count + " time");
+                        else alert("Character \"" + currentChar + "\" we see " + count + " times");
+                        currentChar = stringSorted[i];
+                        count = 1;
+                    }    
+                }
+            }
+
+            task40('First session of the SC training'); //
+
+
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,30 @@
+// Task 9:
+// Дана строка 'dfvrg erge rt4t3 4t34g 34g'. Найдите количество символов в этой строке.  Необходимый символ передаем как параметер
+
+
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task9 = (string, sumb) => { 
+                let count = 0;
+                for(let char of string) {
+                    if (char === sumb) count++;
+                }
+                return count;
+            }
+
+            alert(task9('dfvrg erge rt4t3 4t34g 34g', '3')); //3
+            alert(task9('dfvrg erge rt4t3 4t34g 34g', 'g')); //4
+
+        </script>
+
+    </body>
+
+</html>
