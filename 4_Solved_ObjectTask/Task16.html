@@ -1,0 +1,57 @@
+// Task 16: 
+// Даны 2 объекта. Сравните являются ли данные объекты одинаковыми
+/*
+  {
+     name: "Андрей", 
+     age: 50
+  };
+*/
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task16 = (obj1, obj2) => { 
+                
+                for (key1 in obj1) {
+                    let result = false;
+                    for(key2 in obj2) {
+                        if (key2 == key1 && obj2[key2] == obj1[key1]) {
+                            result = true;
+                        }
+                    }
+                    if (result == false) return false;
+                }
+                return true;
+            }
+
+            let employee1 = {
+                name: "Андрей", 
+                age: 50
+            };
+
+            let employee2 = {
+                name: "Андрей", 
+                age: 50
+            };
+
+            let employee3 = {
+                name: "Андрей", 
+                age: 51
+            };
+
+            alert(task16(employee1, employee2)); //true
+            alert(task16(employee1, employee3));  //false
+            alert(task16(employee2, employee3));  //false
+        
+
+        </script>
+
+    </body>
+
+</html>

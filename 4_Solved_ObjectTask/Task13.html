@@ -1,0 +1,47 @@
+// Task 13:
+// Дан массив, который содержит объект сотрудников (имя, пол, дата рождения)
+// Напишите функцию, которая создает массив с информацией о сотруднике и его дате рождения. Массив должен быть отсортирован в порядке возрастания возраста
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task13 = (arr) => { 
+                let arrRes = arr.sort((a, b) => 
+                    a['dateBirth'].slice(6, 10) > b['dateBirth'].slice(6, 10) ? -1 : // год
+                    a['dateBirth'].slice(3, 5) > b['dateBirth'].slice(3, 5) ? -1 :  // месяц
+                    a['dateBirth'].slice(0, 2) > b['dateBirth'].slice(0, 2) ? -1 : 1);  //день
+                
+                for(let i = 0; i < arr.length; i++) {
+                    alert(arrRes[i]['name']);
+                }
+            }
+
+            let employee = [
+                {
+                    'name': 'Max',
+                    'sex': 'man',
+                    'dateBirth': '28-10-1990',
+                },
+                {
+                    'name': 'Mary',
+                    'sex': 'woman',
+                    'dateBirth': '28-01-1990',
+                },
+                {
+                    'name': 'Dima',
+                    'sex': 'man',
+                    'dateBirth': '10-10-1999'
+                }
+            ];
+
+            alert(task13(employee)); //Dima  Max  Mary
+        </script>
+
+    </body>
+
+</html>

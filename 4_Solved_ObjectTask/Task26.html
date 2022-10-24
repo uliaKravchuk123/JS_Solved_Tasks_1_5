@@ -1,0 +1,52 @@
+// Task 26:
+// Дан текст. Напишите функцию, которая возвращает объект содержащий слова и их количество
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task26 = (text) => { 
+                let objRes = {};
+                let arrText = [];
+                let delSigns = "!\"\'(),./:;&?\`";
+                text = text.toLowerCase();
+
+                for (let i = 0; i < text.length; i++) {
+                    if (delSigns.includes(text[i])) {
+                        text = text.slice(0, i) + text.slice(i+1, text.length);
+                        i--;
+                    }
+                }
+                arrText = text.split(" ").sort();
+                
+                let prevElem = "";
+                for (let j = 0; j < arrText.length; j++) {
+                    if (arrText[j] == prevElem) {
+                        objRes[prevElem]++;
+                    }
+                    else {
+                        objRes[arrText[j]] = 1;
+                        prevElem = arrText[j];
+                    }
+                }
+
+                return objRes;
+            }
+
+            let objText = task26("A tag is a keyword or label that categorizes your question with other, similar questions. A tag is a keyword or label that categorizes your question with other.");
+            
+            alert("\'a\' - " + objText.a);  // 'a' - 4
+            alert("\'categorizes\' - " + objText.categorizes); // 'categorizes' - 2
+
+
+            
+
+        </script>
+
+    </body>
+
+</html>

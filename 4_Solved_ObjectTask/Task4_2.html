@@ -1,0 +1,66 @@
+// Task 4:
+// Дан объект books. Напишите программу, которая возвращает результат по каждой книге: Название и Статус чтения.
+// Статус чтения может принимать значение:  
+//    - Done: progress = 100 %,  
+//    - In progress: 10< progress < 100 %,  
+//    - Started: progress <= 10 %,  
+/* books = [ 
+   {
+       author: «Билл Гейтс»,
+       title: «Дорога впереди»,
+       progress: 9
+   },
+   {
+       author: «Стив Джобс»,
+       title: «Уолтер Исааксон»,
+       progress: 45
+   },
+   {
+       author: «Сюзанна Коллинз»,
+       title: «Сойка-пересмешница: последняя книга Голодных игр», 
+       progress: 100
+   }];
+*/
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task4_2 = (array) => { 
+                for(let book of array) {
+                    let status = "";
+                    if(book['progress'] == 100) status = "Done";
+                    else if(book['progress'] > 10) status = "In progress";
+                    else status = "Started";
+                    alert (book['title'] + " : " + status);
+                }
+            }
+
+            books = [ 
+                {
+                    author: "Билл Гейтс",
+                    title: "Дорога впереди",  // "Started"
+                    progress: 9
+                },
+                {
+                    author: "Стив Джобс",
+                    title: "Уолтер Исааксон",  // "In progress"
+                    progress: 45
+                },
+                {
+                    author: "Сюзанна Коллинз",
+                    title: "Сойка-пересмешница: последняя книга Голодных игр", // "Done" 
+                    progress: 100
+                }];
+
+            task4_2(books);
+            
+        </script>
+
+    </body>
+
+</html>

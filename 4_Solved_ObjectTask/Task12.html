@@ -1,0 +1,58 @@
+// Task 12:
+// Дан массив, который содержит объект сотрудников (имя, пол, отдел)
+// Напишите функцию, которая создает массив сотрудников с добавленным свойством GUID (генерится автоматически)
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task12 = (arr) => { 
+                
+                for(let i = 0; i < arr.length; i++) {
+
+                    function e1() {
+                        let u='';
+                        let i=0;
+                        while(i++<36) {
+                            let c='xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'[i-1];
+                            let r=Math.random()*16|0;
+                            let v=c=='x'?r:(r&0x3|0x8);
+                            u+=(c=='-'||c=='4')?c:v.toString(16);
+                        }
+                        return u;
+                    }
+
+                    arr[i]['GUID'] =  e1();
+                    alert(arr[i]['name'] + " - " + arr[i]['GUID']);
+                }
+            }
+
+            let employee = [
+                {
+                    'name': 'Max',
+                    'sex': 'man',
+                    'depart': 'hr'
+                },
+                {
+                    'name': 'Mary',
+                    'sex': 'woman',
+                    'depart': 'dev'
+                },
+                {
+                    'name': 'Dima',
+                    'sex': 'man',
+                    'depart': 'dev'
+                }
+            ];
+
+            task12(employee); 
+        </script>
+
+    </body>
+
+</html>

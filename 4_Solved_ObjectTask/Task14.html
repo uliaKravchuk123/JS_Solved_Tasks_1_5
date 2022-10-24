@@ -1,0 +1,52 @@
+/ Task 14: 
+// Дан массив, футболистов (имя футболиста и его номер на поле). 
+// Также дан массив  классов футболистов
+// class a: номера на поле до 5
+// class b: номера от 5 до 10
+// class с: номера от 10
+// Напишите функцию, которая создает массив с информацией о футболистах и их классах
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task14 = (arr) => { 
+                
+                for(let i = 0; i < arr.length; i++) {
+                    arr[i]['number'] >= 10 ? arr[i]['class'] = 'c' : 
+                    arr[i]['number'] >= 5 ? arr[i]['class'] = 'b' : arr[i]['class'] = 'a';
+
+                    alert(arr[i]['name'] + " - " + arr[i]['class']);
+                }
+            }
+
+            let footballers = [
+                {
+                    'name': 'Max', //Max - b
+                    'number': 5
+                },
+                {
+                    'name': 'Mary', //Mary - c
+                    'number': 15
+                },
+                {
+                    'name': 'Dima',  //Dima - c
+                    'number': 10
+                },
+                {
+                    'name': 'Roma', //Roma - a
+                    'number': 1
+                }
+            ];
+
+            task14(footballers); 
+        </script>
+
+    </body>
+
+</html>

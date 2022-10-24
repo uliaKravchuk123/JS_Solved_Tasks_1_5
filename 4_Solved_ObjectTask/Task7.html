@@ -1,0 +1,51 @@
+// Task 7:
+// Дан объект. Выведите названия задач у которых продолжительность больше "600" секунд
+/*
+tasks = [ 
+  { 
+    'name': 'Write for Envato Tuts+', 
+    'duration' : "120min" 
+  }, 
+  { 
+    'name': 'Work out', 
+    'duration' : "50min" 
+  }
+  ... 
+];
+*/
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task7 = (arr) => { 
+                for(let i = 0; i < arr.length; i++) {
+                    if(+parseInt(arr[i]['duration']) > 600) alert(arr[i]['name'])
+                }
+            }
+
+            tasks = [ 
+                { 
+                    'name': 'Write for Envato Tuts+', 
+                    'duration' : "1120min" 
+                }, 
+                { 
+                    'name': 'Work out', 
+                    'duration' : "50min" 
+                }, 
+                { 
+                    'name': 'Work MAX', 
+                    'duration' : "1150min" 
+                }
+            ];
+
+            task7(tasks); //'Write for Envato Tuts+' 'Work MAX'
+        </script>
+
+    </body>
+
+</html>

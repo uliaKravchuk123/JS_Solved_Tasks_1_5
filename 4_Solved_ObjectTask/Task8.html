@@ -1,0 +1,62 @@
+// Task 8:
+// Дан объект сотрудника (рабочий номер, имя, пол, возраст, отдел)
+// Напишите функцию, которая по заданным значениям пола + возраста(рендж) + отдела, проверяет подходит ли данный сотрудник на позицию или нет
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task8 = (arr) => { 
+                let pos ={
+                    'ageFrom': 20,
+                    'ageTo': 40,
+                    'sex': 'man',
+                    'depart': 'dev'
+                };
+
+                for(let i = 0; i < arr.length; i++) {
+                    if(arr[i]['age'] > pos.ageFrom && arr[i]['age'] < pos.ageTo && arr[i]['sex'] == pos.sex && arr[i]['depart'] == pos.depart) {
+                        alert(arr[i]['name'] + " подходит на позицию");
+                    }
+                    else alert(arr[i]['name'] + " НЕ подходит на позицию");
+                }
+            }
+
+            let employee = [
+                {
+                    'phone': 5252525,
+                    'name': 'Max',
+                    'age': 18,
+                    'sex': 'man',
+                    'depart': 'hr'
+
+                },
+                {
+                    'phone': 5252526,
+                    'name': 'Mary',
+                    'age': 30,
+                    'sex': 'woman',
+                    'depart': 'dev'
+
+                },
+                {
+                    'phone': 5252525,
+                    'name': 'Dima',
+                    'age': 25,
+                    'sex': 'man',
+                    'depart': 'dev'
+
+                }
+            ];
+
+            task8(employee); //'Max НЕ подходит на позицию' 'Mary НЕ подходит на позицию' 'Dima подходит на позицию'
+        </script>
+
+    </body>
+
+</html>

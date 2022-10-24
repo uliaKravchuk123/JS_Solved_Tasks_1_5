@@ -1,0 +1,105 @@
+// Task 22:
+// Реализовать функцию, которая возвращает объект со след информацией: имя, баланс, емейл, тэги, друзья.
+// Если в исходном объекте, какие то значения не заданы, то должны применится значения по умолчанию
+// Исходный объект:
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task22 = ({name = "nameTest", balance = "balanceTest", email = "emailTest", tags = "tagsTest", friends = "friendsTest"}) => { 
+                let objRes ={};
+                objRes.name = name;
+                objRes.balance = balance;
+                objRes.email = email;
+                objRes.tags = tags;
+                objRes.friends = friends;
+
+                return objRes;
+            }
+
+            let user = {
+                "guid": "dd969d30-841d-436e-9550-3b0c649e4d34",
+                "isActive": false,
+                "balance": "$2,474.46",
+                "age": 30,
+                "eyeColor": "blue",
+                "name": "Tameka Maxwell",
+                "gender": "female",
+                "company": "ENOMEN",
+                "email": "tamekamaxwell@enomen.com",
+                "phone": "+1 (902) 557-3898",
+                "tags": [
+                    "aliquip",
+                    "anim",
+                    "exercitation",
+                    "non",
+                ],
+                "friends": [
+                    {
+                        "id": 0,
+                        "name": "Barber Hicks"
+                    },
+                    {
+                        "id": 1,
+                        "name": "Santana Cruz"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Leola Cabrera"
+                    }
+                ],
+            };
+
+            let result = task22(user);
+            
+            alert(result.name);  // Tameka Maxwell
+            alert(result.balance); // $2,474.46
+
+
+            let notFullUser = {
+                "guid": "dd969d30-841d-436e-9550-3b0c649e4d34",
+                "isActive": false,
+                "age": 30,
+                "eyeColor": "blue",
+                "gender": "female",
+                "company": "ENOMEN",
+                "phone": "+1 (902) 557-3898",
+                "tags": [
+                    "aliquip",
+                    "anim",
+                    "exercitation",
+                    "non",
+                ],
+                "friends": [
+                    {
+                        "id": 0,
+                        "name": "Barber Hicks"
+                    },
+                    {
+                        "id": 1,
+                        "name": "Santana Cruz"
+                    },
+                    {
+                        "id": 2,
+                        "name": "Leola Cabrera"
+                    }
+                ],
+            };
+
+            let result2 = task22(notFullUser);
+            
+            alert(result2.name);  // Tameka Maxwell
+            alert(result2.balance);
+            
+            
+
+        </script>
+
+    </body>
+
+</html>

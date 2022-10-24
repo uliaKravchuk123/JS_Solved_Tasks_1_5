@@ -1,0 +1,75 @@
+// Task 30:
+/* Дан массив товаров. Товар состоит из #, название и количества единиц и стоимости единицы
+ Напишите функцию, которая на вход принимает количество единиц товара, которые хотят купить. На выход выдает строку вида:
+   "<название товара> — стоимость партии из <количество покупаемого товара> штук <стоимость с учетом скидки> Q (скидка <скидка> %), ваша выгода <разниза между стоимости без скидки и со скидкой> Q!"
+
+Скидка расчитывается по данным требованиям:
+- До 10 штук — скидка 5 %
+- От 10 до 50 штук — скидка 7 %
+- От 50 до 100 штук — скидка 10 %
+- 100 и более штук — скидка 15 %
+*/
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task30 = (allItems, item, needQuant) => { 
+                let discount, salePrice, benefit;
+
+                if (needQuant < 10) discount = 5;
+                else if (needQuant < 50) discount = 7;
+                else if (needQuant < 100) discount = 10;
+                else if (needQuant >= 100) discount = 15;
+
+                for (let i = 0; i < allItems.length; i++) {
+                    if (allItems[i].name == item) {
+                        salePrice = allItems[i].price * needQuant * (100 - discount) / 100;
+                        benefit = allItems[i].price * needQuant - salePrice;
+                        
+                    }
+                }
+                return item + " — стоимость партии из " + needQuant + " штук " + salePrice + " Q (скидка " + discount + " %), ваша выгода " + benefit + " Q!";
+            }
+
+            items = [
+                {
+                    number : 365,
+                    name: 'pens',
+                    quantity: 9,
+                    price: 10
+                },
+                {
+                    number : 918,
+                    name: 'books',
+                    quantity: 20,
+                    price: 15
+                },
+                {
+                    number : 251,
+                    name: 'bags',
+                    quantity: 95,
+                    price: 20
+                },
+                {
+                    number : 151,
+                    name: 'sticker',
+                    quantity: 120,
+                    price: 25
+                }
+            ];
+
+            alert(task30(items, 'pens', 9)); // pens — стоимость партии из 9 штук 85.5 Q (скидка 5 %), ваша выгода 4.5 Q!
+            alert(task30(items, 'pens', 20)); // pens — стоимость партии из 20 штук 186 Q (скидка 7 %), ваша выгода 14 Q!
+            alert(task30(items, 'pens', 77)); // pens — стоимость партии из 77 штук 693 Q (скидка 10 %), ваша выгода 77 Q!
+            alert(task30(items, 'pens', 109)); //   pens — стоимость партии из 109 штук 926.5 Q (скидка 15 %), ваша выгода 163.5 Q!
+
+        </script>
+
+    </body>
+
+</html>

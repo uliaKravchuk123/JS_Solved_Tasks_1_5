@@ -1,0 +1,37 @@
+// Task 2:
+// дан словарь(ключ - целое, значение - целое).
+// подсчитать сумму ключей неотрицательных значений
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task2 = (obj) => { 
+                let sum = 0;
+
+                for(let key in obj) {
+                    if(obj[key]>= 0) sum += +key;
+                }
+
+                return sum;
+            }
+
+            let dict = { 
+                1: 1,
+                2: 2,
+                3: -3,
+                4: 9,
+                5: -10,
+                6: 0
+            };
+            alert(task2(dict)); //  13
+    
+        </script>
+
+    </body>
+
+</html>

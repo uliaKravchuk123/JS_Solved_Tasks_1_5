@@ -1,0 +1,53 @@
+// Task 6:
+// Дан объект. Выведите строку в виде: "Меня зовут Андрей и мне 50 лет"
+/*
+  {
+     name: "Андрей", 
+     age: 50
+  };
+*/
+// Учтите окончания в слове "лет"
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task6 = (obj) => { 
+                let ageGod = [1, 21, 31, 41, 51, 61, 71, 81, 91, 101];
+                let ageGoda = [2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44, 52, 53, 54, 62, 63, 64, 72, 73, 74, 82, 83, 84, 92, 93, 94, 102, 103, 104];
+                if(ageGod.includes(obj.age)) alert("Меня зовут " + obj.name + " и мне " + obj.age  + " год");
+                if(ageGoda.includes(obj.age)) alert("Меня зовут " + obj.name + " и мне " + obj.age  + " года");
+                else alert("Меня зовут " + obj.name + " и мне " + obj.age  + " лет");
+            }
+
+            object = {
+                name: "Андрей", 
+                age: 50
+            };
+
+            task6(object); //"Меня зовут Андрей и мне 50 лет"\
+
+            object = {
+                name: "Андрей", 
+                age: 22
+            };
+
+            task6(object); //"Меня зовут Андрей и мне 22 года"
+
+            object = {
+                name: "Андрей", 
+                age: 21
+            };
+
+            task6(object); // "Меня зовут Андрей и мне 21 год"
+
+        </script>
+
+    </body>
+
+</html>

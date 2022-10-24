@@ -1,0 +1,91 @@
+// Task 28:
+/*
+Вам было поручено следить за продажами продуктов в разных городах. Для каждого города вам нужно отслеживать все проданные товары, а для каждого продукта - сумму общего дохода.
+Ввод поступает в виде массива строк. Каждый элемент будет представлять данные о товаре и его продажах. Формат ввода:
+  {город} -> {продукт} -> {количество продаж} : {priceForOneUnit}
+Город и продукт являются строками. Сумма продаж и цена за единицу будут цифрами. 
+
+Напишите функцию, которая возврачает массив городов со свойствами имени, продукта и общий доход по продекту
+   Общий доход рассчитывается по следующей формуле - сумма продаж * цена за единицу. 
+Если вы получаете на вход город, который у вас уже есть, вам нужно просто добавить в него новый продукт.
+
+Например входной массив
+[ 
+  "Sofia -> Laptops HP -> 200 : 2000",
+  "Sofia -> Raspberry -> 200000 : 1500",
+  "Montana -> Portokals -> 200000 : 1"
+]
+
+Должно получится:
+[{
+  Town: Sofia
+  Products: [
+    "Laptops HP" : 400000,
+    "Raspberry" : 300000000
+  ]
+}
+{
+  Town: Montana
+  Products: [
+    "Portokals" : 200000
+  ]
+}]
+*/
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task28 = (arr) => { 
+                let existingTown = []; //массив с существующими в системе городами
+                let arrRes = [];
+                
+                for (let i = 0; i < arr.length; i++) { 
+                  let arrTown = arr[i].split(" -> ");  //делим строку на массив
+                  curObj = {};
+
+                  if (!existingTown.includes(arrTown[0])) { // если в результирующем массиве нет такого города то добавляем объект с новым городом
+                    curObj.Town = arrTown[0];
+
+                    curObj.Products = {};
+                    let numbers = arrTown[2].split(" : ");
+                    curObj.Products[arrTown[1]] = +numbers[0] * +numbers[1];
+                    existingTown.push(arrTown[0]);
+                    arrRes.push(curObj);
+                  }
+
+                  else { //если такой город уже есть в системе то добавляем к существующему объекту 
+                    let numbers = arrTown[2].split(" : ");
+                    arrRes[existingTown.indexOf(arrTown[0])].Products[arrTown[1]] = +numbers[0] * +numbers[1];
+                  }
+
+                }
+                return arrRes;
+            }
+
+            let sales = [ 
+              "Sofia -> Laptops HP -> 200 : 2000",
+              "Sofia -> Raspberry -> 200000 : 1500",
+              "Montana -> Portokals -> 200000 : 1"
+            ];
+
+            let holeSales = task28(sales);
+
+            alert(holeSales[0]['Town']); //Sofia
+            alert(holeSales[1]['Town']); // Montana
+            alert(holeSales[0]['Products']['Laptops HP']); //400000
+            alert(holeSales[0]['Products']['Raspberry']); //300000000
+            alert(holeSales[1]['Products']['Portokals']); // 200000
+
+            
+            
+
+        </script>
+
+    </body>
+
+</html>

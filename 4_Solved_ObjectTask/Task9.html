@@ -1,0 +1,52 @@
+// Task 9:
+// Дан массив, который содержит объект сотрудников (имя, пол, отдел, заработная плата за месяц, количество отработанных дней в предыдущем месяце)
+// Напишите функцию, которая выдает для каждого из сотрудников заработную плату изходя из количество отработанных дней
+
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task9 = (arr) => { 
+                
+
+                for(let i = 0; i < arr.length; i++) {
+                    alert(arr[i]['name'] + ": " + (arr[i]['salaryMonth']/21*arr[i]['workingDays']).toFixed(2));
+                }
+            }
+
+            let employee = [
+                {
+                    'name': 'Max',
+                    'sex': 'man',
+                    'depart': 'hr',
+                    'salaryMonth': 1000,
+                    'workingDays': 18
+                },
+                {
+                    'name': 'Mary',
+                    'sex': 'woman',
+                    'depart': 'dev',
+                    'salaryMonth': 1500,
+                    'workingDays': 21
+                },
+                {
+                    'name': 'Dima',
+                    'sex': 'man',
+                    'depart': 'dev',
+                    'salaryMonth': 2000,
+                    'workingDays': 20
+                }
+            ];
+
+            task9(employee); //'Max: 857.14' 'Mary: 1500.00' 'Dima: 1904.76'
+        </script>
+
+    </body>
+
+</html>

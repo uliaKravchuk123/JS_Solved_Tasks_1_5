@@ -1,0 +1,48 @@
+// Task 27:
+// Дан текст. Напишите функцию, которая возвращает только уникальные слова
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task27 = (text) => { 
+                let arrRes = [];
+
+                let arrText = [];
+                let delSigns = "!\"\'(),./:;&?\`";
+                text = text.toLowerCase();
+
+                for (let i = 0; i < text.length; i++) {
+                    if (delSigns.includes(text[i])) {
+                        text = text.slice(0, i) + text.slice(i+1, text.length);
+                        i--;
+                    }
+                }
+                arrText = text.split(" ").sort();
+
+                if (arrText[0] != arrText[1]) arrRes.push(arrText[0]); //добавить в массив первое слово если оно уникально
+                
+                for (let j = 1; j < arrText.length - 1; j++) {
+                    if (arrText[j] != arrText[j - 1] && arrText[j] != arrText[j + 1]) arrRes.push(arrText[j]);
+                }
+
+                if (arrText[arrText.length - 1] != arrText[arrText.length - 2]) arrRes.push((arrText[arrText.length - 1])); // добавить в массив последнее слово если оно уникально
+
+                return arrRes;
+            }
+
+            let objText = task27("A tag is a keyword or label that categorizes your question with other, similar questions. A tag is a keyword or label that categorizes your question with other escho slovo.");
+            
+            alert(objText);  // escho,questions,similar,slovo
+
+            
+
+        </script>
+
+    </body>
+
+</html>

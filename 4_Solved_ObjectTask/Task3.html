@@ -1,0 +1,32 @@
+// Task 3:
+// Напишите функцию, которая возвращает объект, составленный из значений вложенных массивов. Первое элемент массива - ключ, второй - зачение.
+// Например [['a', 1], ['b', 2]] => { a: 1, b: 2 }
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task3 = (array) => { 
+                let result = {};
+
+                for(let i = 0; i < array.length; i++) {
+                    result[array[i][0]] = array[i][1];
+                }
+
+                return result;
+            }
+
+            
+            let answer = task3([['a', 1], ['b', 2]]);
+            alert(answer.a); //1
+            alert(answer.b); // 2
+    
+        </script>
+
+    </body>
+
+</html>

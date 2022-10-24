@@ -1,0 +1,46 @@
+// Task 4:
+// Дан объект books. Напишите программу, которая удаляет все книги у которых автор "Коул".
+// books = [
+// { author: "Хэленка", title: "Улетела" },
+// { author: "Коул", title: "Аркан" },
+// { author: "Райчел М", title: "Золотая" },
+// ];
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task4 = (array) => { 
+
+                for(let i = 0; i < array.length; i++) {
+                    if(array[i]['author'] == "Коул") array.splice(i, 1);
+                }
+
+                return array;
+            }
+
+            books = [
+                { author: "Хэленка", title: "Улетела" },
+                { author: "Коул", title: "Аркан" },
+                { author: "Райчел М", title: "Золотая" },
+                { author: "Коул", title: "Таркан" },
+            ];
+
+            task4(books);
+
+            alert(books[0].author); //"Хэленка"
+            alert(books[1].author); // "Райчел М"
+            alert(books[1]); //[object Object]
+            alert(books[2]); //undefined
+            alert(books[3]); //undefined
+            
+    
+        </script>
+
+    </body>
+
+</html>

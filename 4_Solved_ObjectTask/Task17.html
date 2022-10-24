@@ -1,0 +1,79 @@
+// Task 17: 
+// Даны 2 объекта. Сравните являются ли данные объекты одинаковыми
+/*
+  {
+     name: "Андрей", 
+     age: 50,
+     languages: ["en", "ru", "fr"]
+  };
+*/
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task17 = (obj1, obj2) => { 
+                
+                for (key1 in obj1) {
+                    let result = false;
+
+                    for(key2 in obj2) {
+
+                        if (key2 == key1) {
+
+                            if (obj2[key2] == obj1[key1]) result = true;
+                            else if (Array.isArray(obj2[key2]) && Array.isArray(obj1[key1]) && obj1[key1].length == obj2[key2].length) { //обрабатываем массивы
+                                result = true;
+                                let array1 = obj1[key1].sort();
+                                let array2 = obj2[key2].sort();
+                                for (let i = 0; i < array1.length; i++){
+                                    if (array1[i] != array2[i]) result = false; 
+                                };
+                            }
+                        }
+                    }
+                    if (result == false) return false;
+                }
+                return true;
+            }
+
+            let employee1 = {
+                name: "Андрей", 
+                age: 50,
+                languages: ["en", "ru", "fr"]
+            };
+
+            let employee2 = {
+                name: "Андрей", 
+                age: 50,
+                languages: ["en", "ru", "fr"]
+            };
+
+            let employee3 = {
+                name: "Андрей", 
+                age: 51,
+                languages: ["en", "ru", "fr"]
+            };
+
+            let employee4 = {
+                name: "Андрей", 
+                age: 51,
+                languages: ["en", "ru", "frфт"]
+            };
+
+            alert(task17(employee1, employee2)); //true
+            alert(task17(employee1, employee3));  //false
+            alert(task17(employee2, employee3));  //false
+            alert(task17(employee3, employee4));  //false
+        
+
+        </script>
+
+    </body>
+
+</html>

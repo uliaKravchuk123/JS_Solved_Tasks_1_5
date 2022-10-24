@@ -1,0 +1,54 @@
+// Task 20:
+// Дан массив объектов.  Напишите функцию, которая возвращает объекты между максимальным и минимальным прайсов. Отсортировать по возрастанию прайса
+/*
+  products = [
+    {title: 'prod1', price: 5.2}, 
+    {title: 'prod2', price: 0.18}
+    ...
+  ]
+*/
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task20 = (prod, priceMax, priceMin) => { 
+                let prodClon = JSON.parse(JSON.stringify(prod));
+                let objRes = [];
+
+                for (let i = 0; i < prodClon.length; i++) {
+                    if (prodClon[i]['price'] < priceMax && prodClon[i]['price'] > priceMin) objRes.push(prodClon[i]);
+                }
+
+                objRes.sort((a, b) => a['price'] < b['price'] ? -1 : 1);
+                
+                return objRes;
+            }
+
+            let products = [
+                {title: 'prod1', price: 5.2}, 
+                {title: 'prod2', price: 0.18},
+                {title: 'prod3', price: 1.6},
+                {title: 'prod4', price: 2.8},
+                {title: 'prod5', price: 4.18}
+            ]
+
+            let result = task20(products, 5, 1);
+            
+            alert(result.length);  // 3 
+            alert(result[0].price);  // 1.6
+            alert(result[1].price);  // 2.8
+            alert(result[2].price);  // 4.18
+
+            
+
+        </script>
+
+    </body>
+
+</html>

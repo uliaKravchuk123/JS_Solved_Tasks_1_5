@@ -1,0 +1,45 @@
+//Task 1:
+// дан список целых чисел. Найти два максимальных значения и получить новый список без них.
+// Пример: { 9, 1, 2, 6}, {1, 2}.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task1 = (obj) => { 
+                let array = obj.arr;
+
+                let delMax = (array) => {
+                    let max1 = array[0];
+                    let index1 = 0;
+                    let count = 0;
+
+                    for(let num of array) {
+                        if(num > max1) {
+                            index1 = count;
+                            max1 = num; 
+                        }
+                        count++;
+                    }
+
+                array.splice(index1, 1);
+                }
+                
+                delMax(array);
+                delMax(array);
+              
+               return array; 
+            }
+
+            let obj = { arr: [9, 1, 2, 6]};
+            alert(task1(obj)); // 1, 2
+    
+        </script>
+
+    </body>
+
+</html>

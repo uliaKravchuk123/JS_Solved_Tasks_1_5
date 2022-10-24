@@ -1,0 +1,74 @@
+// Task 5:
+// Дан объект books. Напишите программу, которая возвращает отсортированыый массив по переданному св-ву объекта
+// Предусмотреть ситуацию, когда такого св-вы не существует
+/* books = [ 
+   {
+       author: «Билл Гейтс»,
+       title: «Дорога впереди»,
+       progress: 12
+   },
+   {
+       author: «Стив Джобс»,
+       title: «Уолтер Исааксон»,
+       progress: 45
+   },
+   {
+       author: «Сюзанна Коллинз»,
+       title: «Сойка-пересмешница: последняя книга Голодных игр», 
+       progress: 100
+   }];
+*/
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task5 = (array, property) => { 
+                if(property == "author" || property == "title" || property == "progress") {
+                array.sort((a, b) => a[property] < b[property] ? -1 : 1);
+                }
+            }
+
+            books = [ 
+   {
+       author: "Билл Гейтс",
+       title: "Дорога впереди",
+       progress: 12
+   },
+   {
+       author: "Стив Джобс",
+       title: "Уолтер Исааксон",
+       progress: 45
+   },
+   {
+       author: "Сюзанна Коллинз",
+       title: "Аойка-пересмешница: последняя книга Голодных игр", 
+       progress: 100
+   }];
+
+            task5(books, 'hello'); // нет такого проперти и ничего не отсортировалось
+
+            alert(books[0].author); //"Билл Гейтс"
+            alert(books[1].author); // "Стив Джобс"
+            alert(books[2].author); // "Сюзанна Коллинз"
+
+            task5(books, 'title'); // сортировка произошла
+
+            alert(books[0].author); //"Сюзанна Коллинз"
+            alert(books[1].author); // "Билл Гейтс"
+            alert(books[2].author); //"Стив Джобс"
+
+            
+
+
+            
+    
+        </script>
+
+    </body>
+
+</html>

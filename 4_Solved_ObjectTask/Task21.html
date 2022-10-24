@@ -1,0 +1,38 @@
+// Task 21:
+// Реализовать функцию, которая на вход получает N количество значений. 1-ый параметр это имя, остальные параметры это языки. Функция должна возвращать объект со след структурой
+/*
+  {
+     name: "Андрей",   => имя из первого параметра 
+     languages: ["en", "ru", "fr"..]  => из всех остальных параметров сделать массив
+  };
+*/
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task21 = (nameUser, lang1, lang2, ... langN) => { 
+                let objRes = {};
+                objRes.name = nameUser;
+                objRes.languages = [lang1, lang2, ... langN];
+
+                return objRes;
+            }
+
+            let result = task21("Sasha", "en", "ru", "fr", "chn");
+            
+            alert(result.name);  // Sasha
+            alert(result.languages); // "en", "ru", "fr", "chn"
+
+
+            
+
+        </script>
+
+    </body>
+
+</html>

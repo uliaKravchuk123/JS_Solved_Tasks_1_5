@@ -1,0 +1,156 @@
+// Task 29:
+// Даны 2 массива. В первом хранятся название позиций, во втором количество товаров.
+// 1. Напишите функцию, которая возвращает массив товаров. Товар состоит из #, название и количества
+// 2. Напишите функцию, которая добавляет товар в массив. На вход передаются 3 параметра
+// 3. Напишите функцию, которая изменяет количество определенного товара на заданное
+// 4. Напишите функцию, которая увеличивает количество определенного товара на 1 товар 
+// 5. Напишите функцию, которая уменьшает количество определенного товара на 1 товар 
+// 6. Напишите функцию, которая проверяет достаточное количество определенного товара на складе. На вход передается количество товара, который хотят купить. Учесть вариант если такого товара вообще не сущечтвует
+// 7. Напишите функцию, которая возвращает название товаров из массива товаров
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            // 1. Напишите функцию, которая возвращает массив товаров. Товар состоит из #, название и количества
+            let task29_1 = (array1, array2) => { 
+                let result = [];
+
+                for (let i = 0; i < array1.length; i++) {
+                    let curObj = {};
+
+                    for (key in array1[i]) {
+                        curObj.number = key;
+                        curObj.name = array1[i][key];
+                        curObj.quantity = array2[i][array1[i][key]];
+                    }
+                    result.push(curObj);
+                }
+                return result;
+            }
+
+            // 2. Напишите функцию, которая добавляет товар в массив. На вход передаются 3 параметра
+            let task29_2 = (array1, array2, newItem) => { 
+                let result = [];
+
+                for (let i = 0; i < array1.length; i++) {
+                    let curObj = {};
+
+                    for (key in array1[i]) {
+                        curObj.number = key;
+                        curObj.name = array1[i][key];
+                        curObj.quantity = array2[i][array1[i][key]];
+                    }
+                    result.push(curObj);
+                }
+                result.push(newItem);
+                return result;
+            }
+
+            // 3. Напишите функцию, которая изменяет количество определенного товара на заданное
+            let task29_3 = (allItems, item, newQuantity) => { 
+
+                for (let i = 0; i < allItems.length; i++) {
+                    if (allItems[i].name == item) allItems[i].quantity = newQuantity;
+                }
+                return allItems;
+            }
+
+            // 4. Напишите функцию, которая увеличивает количество определенного товара на 1 товар 
+            let task29_4 = (allItems, item) => { 
+
+                for (let i = 0; i < allItems.length; i++) {
+                    if (allItems[i].name == item) allItems[i].quantity++;
+                }
+                return allItems;
+            }
+
+            // 5. Напишите функцию, которая уменьшает количество определенного товара на 1 товар 
+            let task29_5 = (allItems, item) => { 
+
+                for (let i = 0; i < allItems.length; i++) {
+                    if (allItems[i].name == item) allItems[i].quantity--;
+                }
+                return allItems;
+            }
+
+            // 6. Напишите функцию, которая проверяет достаточное количество определенного товара на складе. 
+            //На вход передается количество товара, который хотят купить. Учесть вариант если такого товара вообще не сущечтвует
+            let task29_6 = (allItems, item, needQuant) => { 
+
+                for (let i = 0; i < allItems.length; i++) {
+                    if (allItems[i].name == item) {
+                        if (allItems[i].quantity >= needQuant) return item + " товара достаточно";
+                        else return item + " товара НЕ достаточно";
+                    }
+                }
+                return "нет такого товара вналичии";
+            }
+
+            // 7. Напишите функцию, которая возвращает название товаров из массива товаров
+            let task29_7 = (allItems) => { 
+                let arrNames = [];
+
+                for (let i = 0; i < allItems.length; i++) {
+                    arrNames.push(allItems[i].name);
+                }
+                return arrNames;
+            }
+
+
+
+            items = [
+                {365: 'pens'},
+                {918: 'books'},
+                {251: 'bags'}
+            ];
+
+            quantity = [
+                {pens : 55},
+                {books : 65},
+                {bags : 96}
+            ];
+
+            alert('1. Напишите функцию, которая возвращает массив товаров. Товар состоит из #, название и количества');
+            let holeItems = task29_1(items, quantity);
+            alert(holeItems[0].number + " " + holeItems[0].name + " " + holeItems[0].quantity);  //365 pens 55
+            alert(holeItems[1].number + " " + holeItems[1].name + " " + holeItems[1].quantity);  //918 books 65
+            alert(holeItems[2].number + " " + holeItems[2].name + " " + holeItems[2].quantity);  //251 bags 96
+
+            alert('2. Напишите функцию, которая добавляет товар в массив. На вход передаются 3 параметра');
+            let newItem = {number: 897, name: 'dairy', quantity: 43};
+            let holeItems2 = task29_2(items, quantity, newItem);
+            alert(holeItems2[3].number + " " + holeItems2[3].name + " " + holeItems2[3].quantity);  //897 dairy 43
+
+            alert('3. Напишите функцию, которая изменяет количество определенного товара на заданное');
+            task29_3(holeItems, 'bags', 1000);
+            alert(holeItems[0].quantity); //55
+            alert(holeItems[2].quantity); //1000
+
+            alert('4. Напишите функцию, которая увеличивает количество определенного товара на 1 товар');
+            alert(holeItems[2].quantity); //1000
+            task29_4(holeItems, 'bags');
+            alert(holeItems[2].quantity); //1001
+
+            alert('5. Напишите функцию, которая уменьшает количество определенного товара на 1 товар ');
+            alert(holeItems[2].quantity); //1001
+            task29_5(holeItems, 'bags');
+            alert(holeItems[2].quantity); //1000
+
+            alert('6. Напишите функцию, которая проверяет достаточное количество определенного товара на складе.');
+            alert(task29_6(holeItems, 'pens', 1)); // pens товара НЕ достаточно
+            alert(task29_6(holeItems, 'pens', 1000)); //pens товара достаточно
+            alert(task29_6(holeItems, 'rychki', 1)); //нет такого товара вналичии
+
+            alert(' 7. Напишите функцию, которая возвращает название товаров из массива товаров');
+            alert(task29_7(holeItems2)); //pens,books,bags,dairy
+
+        </script>
+
+    </body>
+
+</html>

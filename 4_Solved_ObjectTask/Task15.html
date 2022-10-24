@@ -1,0 +1,42 @@
+// Task 15: 
+// Дан объект. Переверните объект таким образом чтобы ключ стал значением, а значение ключом
+/*
+  {
+     name: "Андрей", 
+     age: 50
+  };
+*/
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task15 = (obj) => { 
+                let objRes = {};
+                
+                for(key in obj) {
+                    objRes[obj[key]] = key;
+                }
+                
+                return objRes;
+            }
+
+            let employee = {
+                name: "Андрей", 
+                age: 50
+            };
+
+            let result = task15(employee);
+            alert(result['Андрей']); // name
+            alert(result['50']);  // age
+
+        </script>
+
+    </body>
+
+</html>

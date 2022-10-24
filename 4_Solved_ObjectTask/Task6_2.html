@@ -1,0 +1,52 @@
+// Task 6:
+// Дан объект. Выведите среднюю продолжительность задач
+/*
+tasks = [ 
+  { 
+    'name': 'Write for Envato Tuts+', 
+    'duration' : 120 
+  }, 
+  { 
+    'name': 'Work out', 
+    'duration' : 60 
+  }
+  ... 
+];
+*/
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task6 = (obj) => { 
+                let sumDur = 0;
+
+                for(let i = 0; i < obj.length; i++) {
+                    sumDur += +obj[i]['duration'];
+                }
+
+                alert("Avg duration is: " + sumDur/(obj.length));
+            }
+
+            tasks = [ 
+                { 
+                    'name': 'Write for Envato Tuts+', 
+                    'duration' : 120 
+                }, 
+                { 
+                    'name': 'Work out', 
+                    'duration' : 60 
+                }
+            ];
+
+            task6(tasks); //"Меня зовут Андрей и мне 50 лет"\
+        </script>
+
+    </body>
+
+</html>

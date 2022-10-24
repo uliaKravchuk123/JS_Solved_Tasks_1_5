@@ -1,0 +1,133 @@
+// Task 23:
+// Реализовать следующие функции для объекта:
+// - открыт ли ресторан
+// - вывести блюда из меню, у которых цена выше среднего чека
+// - добавдение новго официанта
+// - удаление официанта с заданным именем
+// - функцию закрытия ресторана
+// - функция открытия ресторана
+// - функция подсчета количества официантов в ресторане
+// - функция, которая изменяет прайс блюда
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let openRes = (res) => { 
+               return res.openNow;    // - открыт ли ресторан
+            }
+
+            let priceHigher = (res) => {  // - вывести блюда из меню, у которых цена выше среднего чека
+                let resArr = [];
+                for (let i = 0; i < res.menu.length; i++) {
+                    if (+parseInt(res.menu[i]['price']) > +parseInt(res.averageLunchPrice)) resArr.push(res.menu[i]['name']);
+                }
+
+                return resArr;
+            }
+
+            let addWaiter = (res, waiter) => {  // -  добавдение новго официанта
+                res.waitors.push(waiter);
+                return res;
+            }
+
+            let deleteWaiter = (res, nameWait) => {  // -  удаление официанта с заданным именем
+
+                for (let i = 0; i < res.waitors.length; i++) {
+                    if (res.waitors[i]['name'] == nameWait) {
+                       res.waitors.splice(i, 1);
+                       i--;
+                    }
+                }
+                return res;
+            }
+
+            let toCloseRes = (res) => { 
+                res.openNow = false;
+               return res;    // - функцию закрытия ресторана
+            }
+
+            let toOpenRes = (res) => { 
+                res.openNow = true;
+               return res;    // - функция открытия ресторана
+            }
+
+            let countWait = (res) => {  // - функция подсчета количества официантов в ресторане
+                return res.waitors.length;
+            }
+
+            let changePrice = (res, dish, newPrice) => {  // - функция, которая изменяет прайс блюда
+                for (let i = 0; i < res.menu.length; i++) {
+                    if (res.menu[i]['name'] == dish) res.menu[i]['price'] = newPrice;
+                };
+                return res;
+            }
+
+
+            restorantData = {
+                menu: [
+                    {
+                        name: 'Salad Caesar',
+                        price: '14$'
+                    },
+                    {
+                        name: 'Pizza Diavola',
+                        price: '19$'
+                    },
+                    {
+                        name: 'Beefsteak',
+                        price: '17$'
+                    },
+                    {
+                        name: 'Napoleon',
+                        price: '7$'
+                    }
+                ],
+                waitors: [
+                    {name: 'Alice', age: 22}, {name: 'John', age: 24}
+                ],
+                averageLunchPrice: '10$',
+                openNow: true
+            }; 
+
+            // - открыт ли ресторан
+            alert(openRes(restorantData));  // true
+
+            // - вывести блюда из меню, у которых цена выше среднего чека
+            alert(priceHigher(restorantData)); //Salad Caesar,Pizza Diavola,Beefsteak
+
+            // -  добавдение новго официанта
+            let waiter = {name: 'Max', age: 30} ;
+            addWaiter(restorantData, waiter);
+            alert(restorantData.waitors[restorantData.waitors.length - 1]['name']); //Max
+            
+            // - удаление официанта с заданным именем
+            deleteWaiter(restorantData, 'Max');
+            alert(restorantData.waitors[restorantData.waitors.length - 1]['name']); // John
+
+            // - функцию закрытия ресторана
+            toCloseRes(restorantData);  
+            alert(restorantData.openNow); // false
+
+            // - функцию открытия ресторана
+            toOpenRes(restorantData);  
+            alert(restorantData.openNow); // true
+
+            // - функция подсчета количества официантов в ресторане
+            alert(countWait(restorantData));
+
+            // - функция, которая изменяет прайс блюда
+            changePrice(restorantData, 'Napoleon', '20$');
+            alert(restorantData.menu[3]['name'] + " price is " + restorantData.menu[3]['price']) ; //Napoleon price is 20$
+
+
+
+        </script>
+
+    </body>
+
+</html>

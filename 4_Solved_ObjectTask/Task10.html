@@ -1,0 +1,58 @@
+// Task 10:
+// Дан массив, который содержит объект сотрудников (имя, пол, отдел, заработная плата за месяц, количество отработанных дней в предыдущем месяце)
+// Напишите функцию, которая выдает для каждого отдела сотрудника с наибольшой заработной платой
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task10 = (arr) => { 
+                let maxSalEmpl = arr[0]['name'];
+                let maxSal = (arr[0]['salaryMonth']/21*arr[0]['workingDays']).toFixed(2);
+
+
+                for(let i = 1; i < arr.length; i++) {
+                    let curentSal = +(arr[i]['salaryMonth']/21*arr[i]['workingDays']).toFixed(2);
+                    if(maxSal < curentSal) {
+                        maxSal = curentSal;
+                        maxSalEmpl = arr[i]['name'];
+                    };
+                }
+                return(maxSalEmpl);
+            }
+
+            let employee = [
+                {
+                    'name': 'Max',
+                    'sex': 'man',
+                    'depart': 'hr',
+                    'salaryMonth': 1000,
+                    'workingDays': 18
+                },
+                {
+                    'name': 'Mary',
+                    'sex': 'woman',
+                    'depart': 'dev',
+                    'salaryMonth': 1500,
+                    'workingDays': 21
+                },
+                {
+                    'name': 'Dima',
+                    'sex': 'man',
+                    'depart': 'dev',
+                    'salaryMonth': 2000,
+                    'workingDays': 20
+                }
+            ];
+
+            alert(task10(employee)); //'Dima'
+        </script>
+
+    </body>
+
+</html>

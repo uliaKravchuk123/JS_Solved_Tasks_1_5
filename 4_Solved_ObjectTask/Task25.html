@@ -1,0 +1,74 @@
+// Task 25:
+// Напишите функцию, которая возврачае массив городов, который содержит город, широту и долготу
+// На вход подеается массив строк в виде таблицы
+/*
+[
+  '| Town | Latitude | Longitude |',
+  '| Sofia | 42.696552 | 23.32601 |',
+  '| Beijing | 39.913818 | 116.363625 |'];
+
+Между | может содержаться разное количество пробелов
+
+В итоге должна получится след структура:
+[{"Town":"Sofia","Latitude":42.69,"Longitude":23.32},{"Town":"Beijing","Latitude":39.91,"Longitude":116.36}]
+*/
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task25 = (arr) => { 
+                let arrRes = [];
+                
+                for (let i = 1; i < arr.length; i++) { //делим большой массив на строки
+                    let objCur = {"Town": "","Latitude": "","Longitude": ""}; //шаблон объекта
+                    let arrCur = arr[i].split('|'); // массив слов 
+                    arrCur.shift(); //удалить первый и последний элемент т.к. там ""
+                    arrCur.pop();
+
+                    let prevChar = "";
+                    for (let j = 0; j < arrCur.length; j++) { // берем по слову из массива
+
+                        for (let g = 0; g < arrCur[j].length; g++) { //берем по букве из слова чтобы удалить пробелы
+
+                            if ((arrCur[j][g] == " " && prevChar == " ") || 
+                                (arrCur[j][g] == " " && g == 0) || 
+                                (arrCur[j][g] == " " && g == arrCur[j].length - 1)) {
+                                    prevChar = arrCur[j][g];
+                                    arrCur[j] = arrCur[j].slice(0, g) + arrCur[j].slice(g + 1, arrCur[j].length);
+                                }
+                        }
+                        objCur.Town = arrCur[0];
+                        objCur.Latitude = arrCur[1];
+                        objCur.Longitude = arrCur[2];
+                    }
+                    
+                    arrRes.push(objCur);
+                }
+                
+                return arrRes;
+            }
+
+            let towns = ['| Town | Latitude | Longitude |','| Sofia | 42.696552 | 23.32601 |','| Beijing | 39.913818 | 116.363625 |'];
+            // result [{"Town":"Sofia","Latitude":42.69,"Longitude":23.32},{"Town":"Beijing","Latitude":39.91,"Longitude":116.36}]
+
+            let newTown = task25(towns);
+
+            alert(newTown[0]['Town']); //Sofia
+            alert(newTown[0]['Latitude']); //42.696552
+            alert(newTown[0]['Longitude']); //23.32601
+            alert(newTown[1]['Town']); //Beijing
+            alert(newTown[1]['Latitude']); // 39.913818
+            alert(newTown[1]['Longitude']); //116.363625
+            
+            
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,56 @@
+// Task 11:
+// Дан массив, который содержит объект сотрудников (имя, пол, отдел, заработная плата за месяц, количество отработанных дней в предыдущем месяце)
+// Напишите функцию, которая выдает информацию о сотрудниках с отработанными днями больше 15 и зарплатой менее 2500. 
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task11 = (arr) => { 
+                let arrRes = [];
+                
+                for(let i = 0; i < arr.length; i++) {
+                    let curentSal = +(arr[i]['salaryMonth']/21*arr[i]['workingDays']).toFixed(2);
+                    if(arr[i]['workingDays'] > 15 && curentSal < 2500) {
+                        arrRes.push(arr[i]['name']);
+                    }
+                }
+
+                return arrRes;
+            }
+
+            let employee = [
+                {
+                    'name': 'Max',
+                    'sex': 'man',
+                    'depart': 'hr',
+                    'salaryMonth': 1000,
+                    'workingDays': 15
+                },
+                {
+                    'name': 'Mary',
+                    'sex': 'woman',
+                    'depart': 'dev',
+                    'salaryMonth': 1500,
+                    'workingDays': 21
+                },
+                {
+                    'name': 'Dima',
+                    'sex': 'man',
+                    'depart': 'dev',
+                    'salaryMonth': 2000,
+                    'workingDays': 20
+                }
+            ];
+
+            alert(task11(employee)); //'Mary,Dima'
+        </script>
+
+    </body>
+
+</html>

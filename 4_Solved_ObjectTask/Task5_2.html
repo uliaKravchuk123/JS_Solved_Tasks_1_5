@@ -1,0 +1,59 @@
+// Task 5:
+// Дан объект books. Напишите программу, которая возвращает Авторов и количество книг автора
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task5 = (array) => { 
+                let result = {};
+                let count = 0;
+                array.sort((a, b) => a['author'] < b['author'] ? -1 : 1);
+                for(let i = 0; i < array.length; i++) {
+                    count = 1;
+                    for(let j = i + 1; j < array.length; j++){
+                        if(array[j]['author'] == array[i]['author']) count++;
+                        else {
+                            i = j - 1;
+                            j = array.length;
+                        } 
+                    }
+                    alert(array[i]['author'] + " : " + count + " books");
+                }
+            }
+
+            books = [ 
+                {
+                    author: "Билл Гейтс",
+                    title: "Дорога впереди",
+                    progress: 12
+                },
+                {
+                    author: "Стив Джобс",
+                    title: "Уолтер Исааксон",
+                    progress: 45
+                },
+                {
+                    author: "Сюзанна Коллинз",
+                    title: "Аойка-пересмешница: последняя книга Голодных игр", 
+                    progress: 100
+                },
+                {
+                    author: "Билл Гейтс",
+                    title: "Дорога впереди 2",
+                    progress: 33
+                }
+            ];
+
+            task5(books); 
+
+        </script>
+
+    </body>
+
+</html>

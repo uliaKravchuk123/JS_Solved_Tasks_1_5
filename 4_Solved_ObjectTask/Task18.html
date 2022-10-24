@@ -1,0 +1,47 @@
+// Task 18: 
+// Даны объект. Напишите функцию, которая возвращает клон объекта
+/*
+  {
+     name: "Андрей", 
+     age: 50,
+     languages: ["en", "ru", "fr"]
+  };
+*/
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task18 = (obj) => { 
+                let objRes = {};
+                
+                for(key in obj) {
+                    objRes[key] = obj[key];
+                }
+                
+                return objRes;
+            }
+
+            let employee = {
+                name: "Андрей", 
+                age: 50,
+                languages: ["en", "ru", "fr"]
+            };
+
+            let cloned = task18(employee);
+            cloned.newKey = "newValue";
+            alert(cloned.newKey);  //"newValue"
+            alert(cloned.languages);  // en,ru,fr
+            alert(employee.newKey);  // "undefined"
+            
+
+        </script>
+
+    </body>
+
+</html>

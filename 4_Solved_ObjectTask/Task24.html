@@ -1,0 +1,75 @@
+// Task 24:
+/*Напишите функцию, которая возврачае массив сотрудников, который состоит из 3 элементов — имени сотрудника, зарплаты сотрудника и должности сотрудника.
+  На вход поступает массив строк. Каждый элемент представляет входные данные о сотрудниках. Вы должны захватывать только действительные из них. Строка в массиве будет иметь следующий формат:
+    {employeeName} - {employeeSalary} - {employeePosition}
+  
+  Имя сотрудника будет представлять собой строку, которая может содержать только буквы английского алфавита и
+  должна начинаться с заглавной буквы. 
+  Зарплата сотрудника должна быть ДЕЙСТВИТЕЛЬНЫМ числом. 
+  Должность сотрудника может содержать буквы английского алфавита, цифры, дефисы, а также может состоять из нескольких слов. 
+  Любая строка, которая НЕ соответствует указанным выше правилам, считается недействительным и игнорируется.
+Пример входного текста:
+    Isacc - 1000 - CEO
+    Ivan - 500 - Employee
+    Peter - 500 - Employee
+*/
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task23 = (arrEmpl) => { 
+                let arrRes = [];
+                
+                labelWrongString: for (let i = 0; i < arrEmpl.length; i++) {
+                    let arrCur = arrEmpl[i].split(" - ");
+
+                     //имя сотрудника первая заглавная буква англ алфавита
+                    if (arrCur[0][0] < 'A' || arrCur[0][0] > 'Z') continue labelWrongString;
+
+                    //имя сотрудника остальные буквы из англ алфавита
+                    for (let l = 1; l < arrCur[0].length; l++) {
+                         if (arrCur[0][l] < 'a' || arrCur[0][l] > 'z') continue labelWrongString;
+                    } 
+
+                    // зарплата сотрудника
+                    if (!Number.isFinite(+arrCur[1])) continue labelWrongString;
+
+                    //Должность сотрудника может содержать буквы английского алфавита, цифры, дефисы, а также может состоять из нескольких слов. 
+                     for (let k = 0; k < arrCur[2].length; k++) {
+                         if ((arrCur[2][k] > " " && arrCur[2][k] < "-") || 
+                             (arrCur[2][k] > "-" && arrCur[2][k] < "0") ||
+                             (arrCur[2][k] > '9' && arrCur[2][k] < 'A') || 
+                             (arrCur[2][k] > 'Z' && arrCur[2][k] < 'a') || 
+                             arrCur[2][k] > 'z') {
+                                continue labelWrongString;
+                        }
+                    }
+                    
+                    arrRes.push(arrCur);
+                }
+                
+                return arrRes;
+            }
+
+            let emplStrings = ['Isacc - 1000 - CEO', '123 - 1000 - CEO', 'Ivan - 500 - Employee', 'Isacc - 1Y00 - CEO', 'Peter - 500 - Employee', "Isacc - 1000 - C@EO"];
+
+            let empl = task23(emplStrings);
+
+            alert("test1" + empl[0]); //Isacc,1000,CEO
+            alert(empl[1]); //Ivan,500,Employee
+            alert(empl[2]); //Peter,500,Employee
+            alert(empl[3]); //undefined
+            
+            
+
+        </script>
+
+    </body>
+
+</html>
