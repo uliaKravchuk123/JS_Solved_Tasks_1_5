@@ -1,0 +1,44 @@
+// Task 3:
+// Даны 2 целых числа, посчитать количнство максимальных цифр в числах 
+// Например:  265 и 654  => 2 (т.к  max = 6)
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            function task3(a, b) {
+                let count = 0;
+                let max = a % 10;
+                while (a >= 1){
+                    let currentA = a % 10;
+                    if (max < currentA) {
+                        max = Math.max (max, currentA);
+                        count = 1;
+                    }
+                    else if (max == currentA) { count++; }
+                    a = (a - a % 10) / 10;
+                }
+
+                while (b >= 1) {
+                    let currentB = b % 10;
+                    if (max < currentB) {
+                        max = Math.max (max, currentB);
+                        count = 1;
+                    }
+                    else if (max == currentB) { count++; }
+                    b = (b - b % 10) / 10;
+                }
+                return count;
+            }
+
+            alert(task3(2666, 666));
+
+        </script>
+
+    </body>
+
+</html>

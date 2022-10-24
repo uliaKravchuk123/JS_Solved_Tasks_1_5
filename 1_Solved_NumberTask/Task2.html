@@ -1,0 +1,36 @@
+// Task 2:
+// Даны 2 целых числа, найти минимальную цифру 
+// Например:  235 и 654  => 2
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            function task2(a, b) {
+                let min = a % 10;
+                while (a >= 1){
+                    let minA = a % 10;
+                    min = Math.min (min, minA);
+                    a = (a - a % 10) / 10;
+                }
+
+                while (b >= 1) {
+                    let minB = b % 10;
+                    min = Math.min (min, minB);
+                    b = (b - b % 10) / 10;
+                }
+                
+                return min;
+            }
+
+            alert(task2(235, 654));
+
+        </script>
+
+    </body>
+
+</html>

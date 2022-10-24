@@ -1,0 +1,27 @@
+// Task 7:
+// Дано число N. Если число меньше 100, то вывести его, иначе вывести ошибку.
+// Реализовать метод в 1-у строку
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let number = {
+                error : "Error message",
+                methErr(N) {
+                    if (N < 100) alert(N);
+                    else alert(this.error);
+                }
+            }
+            
+            number.methErr(-0);
+
+        </script>
+
+    </body>
+
+</html>

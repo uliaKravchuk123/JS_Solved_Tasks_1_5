@@ -1,0 +1,31 @@
+// Task 25:
+// Напишите функцию, которая проверяет, что это число не делится ни на одно другое число кроме себя самого и единицы.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            function task25(num) {
+                for (let i = 2; i < num; i++) {
+                    if (num % i == 0) return "Число не простое";
+                }
+                return "Число простое";
+                
+            }
+
+            alert(task25(3));
+            alert(task25(4));
+            alert(task25(13));
+            alert(task25(26));
+
+
+
+        </script>
+
+    </body>
+
+</html>

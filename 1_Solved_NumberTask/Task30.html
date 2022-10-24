@@ -1,0 +1,31 @@
+// Task 30:
+//Рассчитать значение у при заданном значении х:
+//y=sin(x) при x>0 или y=cos(x) в противном случае.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+            
+
+            function task30(x) {
+                if (x > 0) return Math.sin(x);
+                else if (x < 0) return Math.cos(x);
+                else return "Не оговорено в условии";
+            }
+
+            alert(task30(1)); // 0.8414709848078965
+            alert(task30(-1)); // 0.5403023058681398
+
+
+
+
+
+        </script>
+
+    </body>
+
+</html>

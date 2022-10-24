@@ -1,0 +1,27 @@
+// Task 9:
+// Напишите функцию, которая переворачивает число
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            function task9 (num) {
+                let arr = [];
+                for (let ar of num.toString()) {
+                    arr.unshift(ar);
+                }
+                return arr.join('');
+
+            }
+            
+            alert(task9(951));
+
+        </script>
+
+    </body>
+
+</html>

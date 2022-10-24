@@ -1,0 +1,48 @@
+// Task 28:
+//Возраст Тани — X лет, а возраст Мити — Y лет. Найти их средний возраст, а также определить, на сколько отличается возраст каждого ребенка от среднего значения. 
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+            function averageAge (X, Y) {
+                return (X + Y) / 2;
+            }
+
+            function deltaX (X, Y) {
+                let delX = averageAge (X, Y) - X
+                if (delX > 0) return "Танин возраст меньше среднего возраста на " + delX + " года";
+                else if (delX < 0) return "Танин возраст больше среднего возраста на " + (-delX) + " года";
+                else if (delX == 0) return "Танин возраст равен среднему возрасту";
+            }
+
+            function deltaY (X, Y) {
+                let delY = averageAge (X, Y) - Y
+                if (delY > 0) return "Митин возраст меньше среднего возраста на " + delY + " года";
+                else if (delY < 0) return "Митин возраст больше среднего возраста на " + (-delY) + " года";
+                else if (delY == 0) return "Митин возраст равен среднему возрасту";
+            }
+
+            function task28(X, Y) {
+                
+                return `Средний возраст детей: ${averageAge (X, Y)} 
+                ${deltaX (X, Y)}
+                ${deltaY (X, Y)}`;
+                
+            }
+
+            alert(task28(10, 15));
+            alert(task28(4, 8));
+            alert(task28(10, 10))
+
+
+
+
+        </script>
+
+    </body>
+
+</html>

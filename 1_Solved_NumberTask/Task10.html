@@ -1,0 +1,25 @@
+// Task 10:
+// Напишите функцию, которая проверяет, является ли число простым или нет.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            function task10 (num) {
+                for (let i = 2; i < num; i++) {
+                    if (num % i == 0) return false; 
+                }
+                return true;
+            }
+            
+            alert(task10(6));
+
+        </script>
+
+    </body>
+
+</html>

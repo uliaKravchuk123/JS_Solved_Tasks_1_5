@@ -1,0 +1,32 @@
+/ Task 34:
+// Написать в функцию, в которую передается неизвестное количество целых чисел. Функция возвращает их сумму
+// console.log(sum());  => 0
+// console.log(sum(1, 2, 3, 4)); => 10
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            function sum() {
+                let sum = 0;
+                for (var i = 0; i < arguments.length; i++) {
+                    sum += arguments[i];
+                }
+                return sum;
+                
+            }
+                
+
+            alert(sum(1, 2, 3));
+            console.log(sum());  // 0
+            console.log(sum(1, 2, 3, 4)); // 10
+
+        </script>
+
+    </body>
+
+</html>

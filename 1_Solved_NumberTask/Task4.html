@@ -1,0 +1,31 @@
+// Task 4:
+// Получить N-ое число последовательности фибоначи
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            function task4(N) {
+                let arrFib = [0, 1];
+                if (N == 1) return arrFib[0];
+                if (N == 2) return arrFib[1];
+                if (N > 2) {
+                    for (let i = 2; i < N; i++) {
+                        arrFib.push(arrFib[i-1] + arrFib[i - 2]);
+                    }
+                    return arrFib[N-1];
+                }
+               
+            }
+
+            alert(task4(15));
+
+        </script>
+
+    </body>
+
+</html>

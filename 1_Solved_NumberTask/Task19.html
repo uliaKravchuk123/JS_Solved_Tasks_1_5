@@ -1,0 +1,29 @@
+// Task 19:
+//  Напишите функцию, которая определяет является ли число степенью N
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            function task19(result, N) {
+                alert(Math.pow(result, 1/N));
+                if (Math.pow(result, 1/N) % 1 == 0) return true;
+                else return false;
+            }
+
+            alert(task19(4, 2));
+            alert(task19(9, 3));
+            alert(task19(27, 3));
+            alert(task19(32, 5));
+            alert(task19(1000, 5));
+
+
+        </script>
+
+    </body>
+
+</html>

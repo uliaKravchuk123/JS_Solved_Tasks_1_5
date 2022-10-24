@@ -1,0 +1,69 @@
+// Task 8:
+// Реализовать метод калькулятор для 2-х целых чисел. Калькулятор должен поддерживать:
+// - сложение
+// - вычитание
+// - деление
+// - умножение
+// Реализовать 2-мя способами: через if и switch
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let calculatorIf= {
+                a: +prompt("enter a", "1"),
+                sign: prompt(`choose sign!!! 
+                    + if you want to add
+                    - if you want to subtract
+                    * if you want to multiply
+                    / if you want to divide`, "+"),
+                b: +prompt("enter b", "2"),
+
+                calculatorOn() {
+                    if (this.sign == "+") return this.a + this.b;
+                    else if (this.sign == "-") return this.a - this.b;
+                    else if (this.sign == "*") return this.a * this.b;
+                    else if (this.sign == "/") return this.a / this.b;
+                }
+            }
+
+            let calculatorSwitch= {
+                a: +prompt("enter a", "1"),
+                sign: prompt(`choose sign!!! 
+                    + if you want to add
+                    - if you want to subtract
+                    * if you want to multiply
+                    / if you want to divide`, "+"),
+                b: +prompt("enter b", "2"),
+
+                calculatorOn() {
+                    switch(this.sign) {
+                        case '+':
+                            return this.a + this.b; 
+                            break;
+                        case '-':
+                            return this.a - this.b; 
+                            break;
+                        case '*':
+                            return this.a * this.b; 
+                            break;
+                        case '/':
+                        return this.a / this.b; 
+                            break;
+                    }
+                }
+            }
+            
+            alert(calculatorIf.calculatorOn());
+            alert(calculatorSwitch.calculatorOn());
+            
+
+        </script>
+
+    </body>
+
+</html>

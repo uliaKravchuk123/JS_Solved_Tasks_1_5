@@ -1,0 +1,47 @@
+// Task 14:
+// Дано целое число. Напишите функцию, которая рисует n строк по след шаблону
+//    *  
+//   * *  
+//  * * *  
+// * * * *  
+//* * * * * 
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            function task14 (num) {
+
+                let str = ' ' ;
+                
+
+                for (let i = 1; i <= num; i++) {
+                    let substr = '';
+
+                    for (let j = i; j >= 1; j--) { 
+                        substr = '* ' + substr ;
+                    }
+
+                    for (let k = i; k <= num; k++) {
+                        substr = ' ' + substr;
+                    }
+
+                    str =  str + '\n' + substr ;
+                }
+                return str;
+            }
+            
+            alert(task14(1));
+            alert(task14(2));
+            alert(task14(3));
+            alert(task14(5));
+
+        </script>
+
+    </body>
+
+</html>

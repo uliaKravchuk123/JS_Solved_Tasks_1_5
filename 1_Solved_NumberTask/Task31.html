@@ -1,0 +1,27 @@
+// Task 31:
+//Дано трехзначное число. Определить, какая из его цифр больше
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            function task31(x) {
+                let a = Math.trunc(x/100);
+                x = x - a*100;
+                let b = Math.trunc(x/10);
+                x = x - b*10;
+                return Math.max(a, b, x);
+            }
+
+            alert(task31(235)); // 
+            alert(task31(906)); // 
+
+        </script>
+
+    </body>
+
+</html>

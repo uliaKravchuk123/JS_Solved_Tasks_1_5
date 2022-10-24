@@ -1,0 +1,46 @@
+// Task 32:
+//Мастям игральных карт условно присвоены следующие порядковые номера: масти «пики» — 1, масти «трефы» — 2, масти бубны» — 3, масти «червы» — 4.
+// По заданному номеру масти m (1 <= m <= 4) определить название соответствующей масти
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            function task32(card) {
+                card = card.toString();
+
+                switch(card) {
+                    case '1': 
+                        return "пики";
+                        break;
+                    case '2': 
+                        return "трефы";
+                        break; 
+                    case '3': 
+                        return "бубны";
+                        break; 
+                    case '4': 
+                        return "червы";
+                        break; 
+                    default:
+                        return "нет такой масти";
+                        break;
+                }
+            }
+                
+
+            alert(task32(1));  
+            alert(task32(2));
+            alert(task32(3)); 
+            alert(task32(4));
+            alert(task32(5));
+
+        </script>
+
+    </body>
+
+</html>
