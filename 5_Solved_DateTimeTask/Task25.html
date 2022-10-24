@@ -1,0 +1,40 @@
+// Task 25:
+// Дана дата рождения собаки в виде строки. Напишите функцию, которая вычисляет % дискаунта, который необходимо применить к сумме страхования в зависимости от возраста собаки
+// Если возраст собаки больше 5 лет, то нет скидки
+// Если возраст собаки от 1 до 3 лет, то 5%
+// Если возраст собаки от 3 до 5 лет, то 2%
+// Если возраст собаки менише 1, то 1%
+// Учтите возможность ввода некоректных данных
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task25 = (str) => { 
+                let birthDate = Date.parse(str);
+
+                if (isNaN(birthDate)) return "ERROR enter"; // проверяю дата ли
+
+                let now = new Date ();
+                let age = Math.trunc((now - birthDate) / 31536000000);
+
+                return age < 1 ? "1%" : age < 3 ? "5%" : age < 5 ? "2%" : "0%";
+            }
+
+            let date = "2020-01-26";
+            alert(task25(date)); // 5%
+
+            let date2 = "str";
+            alert(task25(date2)); // ERROR enter
+
+            let date3 = "2022-01-26";
+            alert(task25(date3)); // 1%
+        </script>
+
+    </body>
+
+</html>

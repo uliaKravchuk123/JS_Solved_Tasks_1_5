@@ -1,0 +1,35 @@
+// Task 10:
+// Дана переменная в формате даты (new Date(2021, 1, 21)). Напишите функцию, которая выводит к какому кварталу года относится данная дата
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task10 = (date) => { 
+                return date.getMonth() < 3 ? "1st Quarter" : 
+                       date.getMonth() < 6 ? "2nd Quarter" : 
+                       date.getMonth() < 9 ? "3rd Quarter" : 
+                       "4th Quarter";
+            }
+
+            let date = new Date(2021, 1, 21);
+            alert(task10(date)); // 1st Quarter
+
+            let date2 = new Date(2021, 5, 21);
+            alert(task10(date2)); // 2nd Quarter
+
+            let date3 = new Date(2021, 8, 21);
+            alert(task10(date3)); // 3rd Quarter
+
+            let date4 = new Date(2021, 11, 21);
+            alert(task10(date4)); // 4th Quarter
+
+        </script>
+
+    </body>
+
+</html>

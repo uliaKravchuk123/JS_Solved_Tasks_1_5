@@ -1,0 +1,32 @@
+// Task 9:
+// Дана строка с датой в формате dd/mm/yyyy. Напишите функцию, которая получает количество дней в заданном году
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task2 = (str) => { 
+                let arrDate = str.split('/');
+                
+                if (+arrDate[2] % 4 == 0) {
+                    if (+arrDate[2] % 100 == 0 && +arrDate[2] % 400 != 0) return 365;
+                    else return 366;
+                }
+                else return 365;
+            }
+
+            let date = "01/02/2022"
+            alert(task2(date)); // 365
+
+            let date2 = "01/02/2020"
+            alert(task2(date2)); // 366
+
+        </script>
+
+    </body>
+
+</html>

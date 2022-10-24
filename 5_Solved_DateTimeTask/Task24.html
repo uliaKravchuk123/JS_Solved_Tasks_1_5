@@ -1,0 +1,24 @@
+// Task 24:
+// Дана строка в формате dd/mm/yyyy. Напишите функцию, которая конвертирует строку в mm/dd/yyyy
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task24 = (str) => { 
+                let strRes = str.slice(3, 6) + str.slice(0, 3) + str.slice(6, 10);
+                
+                return strRes;
+            }
+
+            let date = "26/12/2022";
+            alert(task24(date)); // 12/26/2022
+        </script>
+
+    </body>
+
+</html>

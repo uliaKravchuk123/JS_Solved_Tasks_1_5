@@ -1,0 +1,25 @@
+// Task 15:
+// Даны 2 строки с датой в формате dd/mm/yyyy. Напишите функцию, которая выводит разницу в количестве дней между датами
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task15 = (date1, date2) => { 
+                let countdays = Math.trunc(Math.abs(date1 - date2) / 86400000);
+                alert(countdays);
+            }
+
+            let date1 = new Date(2021, 4, 21);
+            let date2 = new Date(2021, 5, 21);
+
+            alert(task15(date1, date2)); // 31
+        </script>
+
+    </body>
+
+</html>

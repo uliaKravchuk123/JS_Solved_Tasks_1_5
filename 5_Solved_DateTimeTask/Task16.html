@@ -1,0 +1,26 @@
+// Task 16:
+// Дана строка с датой в формате dd/mm/yyyy. Напишите функцию, которая прибавляет к дате N-ое колиество недель
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task4 = (str, N) => { 
+                let arrDate = str.split('/');
+                let date = new Date(+arrDate[2], +arrDate[1] - 1, +arrDate[0] + N * 7);
+                return date;
+            }
+
+            let date = "01/02/2022"
+            alert(task4(date, 1)); // Tue Feb 08 2022
+            alert(task4(date, 2)); // Tue Feb 15 2022
+
+        </script>
+
+    </body>
+
+</html>

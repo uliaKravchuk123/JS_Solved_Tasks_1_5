@@ -1,0 +1,25 @@
+// Task 20:
+// Даны 2 строки с датой в формате dd/mm/yyyy. Напишите функцию, которая выводит разницу в количестве месяцев между датами
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task15 = (date1, date2) => { 
+                let countMonths = Math.abs(date1.getFullYear() - date2.getFullYear()) * 12 + Math.abs(date1.getMonth() - date2.getMonth());
+                alert(countMonths);
+            }
+
+            let date1 = new Date(2020, 4, 21);
+            let date2 = new Date(2021, 5, 21);
+
+            alert(task15(date1, date2)); // 13
+        </script>
+
+    </body>
+
+</html>

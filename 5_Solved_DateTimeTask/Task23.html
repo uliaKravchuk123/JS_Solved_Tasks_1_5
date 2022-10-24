@@ -1,0 +1,29 @@
+// Task 23:
+// Дан массив строка с датами в формате dd/mm/yyyy. Напишите функцию, которая сортирует массив по возрастанию
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task23 = (arr) => { 
+                arr.sort((a,b) => +a.slice(6, 10) > +b.slice(6, 10) ? 1 :
+                                  +a.slice(6, 10) < +b.slice(6, 10) ? -1 :
+                                  +a.slice(3, 5) > +b.slice(3, 5) ? 1 :
+                                  +a.slice(3, 5) < +b.slice(3, 5) ? -1 :
+                                  +a.slice(0, 2) > +b.slice(0, 2) ? 1 : -1
+                );
+                return arr;
+            }
+
+            let date = ["01/02/2022", "01/03/2022", "05/02/2022", "01/02/2027"];
+            alert(task23(date)); // 01/02/2022,05/02/2022,01/03/2022,01/02/2027
+
+        </script>
+
+    </body>
+
+</html>

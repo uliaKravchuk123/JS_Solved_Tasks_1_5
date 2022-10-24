@@ -1,0 +1,36 @@
+// Task 6:
+// Дана массив строк в формате dd/mm/yyyy. Напишите функцию, которая выводит максимальную дату из массива дат.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task6 = (arr) => { 
+                let maxDate = 0;
+                let maxDateMS = 0;
+
+                for (let i = 0; i < arr.length; i++) {
+                    let arrDate = arr[i].split('/');
+                    let date = new Date(+arrDate[2], +arrDate[1] - 1, +arrDate[0]);
+                    if (date - maxDateMS > 0) {
+                        maxDate = arr[i];
+                        maxDateMS = date;
+                    };
+                }
+
+                return maxDate;
+            }
+
+            let date = ["01/02/2022", "01/06/2022", "01/02/2028", "10/02/2022"]
+            alert(task6(date)); //01/02/2028
+            
+
+        </script>
+
+    </body>
+
+</html>

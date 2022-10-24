@@ -1,0 +1,26 @@
+// Task 4:
+// Дана строка с датой в формате dd/mm/yyyy. Напишите функцию, которая прибавляет к данной дате N дней
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task4 = (str, N) => { 
+                let arrDate = str.split('/');
+                let date = new Date(+arrDate[2], +arrDate[1] - 1, +arrDate[0] + N);
+                return date;
+            }
+
+            let date = "01/02/2022"
+            alert(task4(date, 1)); // Wed Feb 02 2022
+            alert(task4(date, 55)); // Mon Mar 28 2022
+
+        </script>
+
+    </body>
+
+</html>

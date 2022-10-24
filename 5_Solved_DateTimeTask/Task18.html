@@ -1,0 +1,26 @@
+// Task 18:
+// Дана строка с датой в формате dd/mm/yyyy. Напишите функцию, которая прибавляет к дате N-ое колиество месяцев
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task4 = (str, N) => { 
+                let arrDate = str.split('/');
+                let date = new Date(+arrDate[2], +arrDate[1] - 1 + N, +arrDate[0]);
+                return date;
+            }
+
+            let date = "01/02/2022"
+            alert(task4(date, 1)); // Tue Mar 01 2022
+            alert(task4(date, 12)); // Wed Feb 01 2023
+
+        </script>
+
+    </body>
+
+</html>

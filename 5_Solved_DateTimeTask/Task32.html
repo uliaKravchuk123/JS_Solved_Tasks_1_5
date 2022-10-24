@@ -1,0 +1,38 @@
+// Task 32:
+// Дан текст который содержит даты в формате d-MMM-yyyy. Напишите функцию, которая возвращает все даты в DateTime формате
+/*
+  I am born on 30-Dec-1994.
+  This is not date: 12-Jan-1996.
+  My father is born on the 29-Jul-1955.
+*/
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task32 = (str) => { 
+                let birthday = [];
+
+                for (let i = 0 ; i < str.length; i++) {
+                    if (str[i] == ".") {
+                        let birth = str.slice(str.lastIndexOf(" ", i), i);
+                        let dateBirth = new Date (birth);
+                        birthday.push(dateBirth);
+                    }
+                }     
+                return birthday;
+
+            }
+
+            let text = 'I am born on 30-Dec-1994. This is not date: 12-Jan-1996. My father is born on the 29-Jul-1955.';
+            alert(task32(text)); //
+
+        </script>
+
+    </body>
+
+</html>

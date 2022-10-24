@@ -1,0 +1,30 @@
+// Task 5:
+// Дана строка с датой в формате dd/mm/yyyy. Напишите функцию, которая проверяет является ли данная дата выходным днем
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task5 = (str) => { 
+                let arrDate = str.split('/');
+                let date = new Date(+arrDate[2], +arrDate[1] - 1, +arrDate[0]);
+                if (date.getDay() == 0 || date.getDay() == 6) return "это выходной";
+                else return "это будний";
+            }
+
+            let date = "22/10/2022"
+            alert(task5(date)); // это выходной
+
+            let date2 = "21/10/2022";
+            alert(task5(date2)); //это будний
+            
+
+        </script>
+
+    </body>
+
+</html>

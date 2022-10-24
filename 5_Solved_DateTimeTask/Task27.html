@@ -1,0 +1,26 @@
+// Task 27:
+// Выведите на экран текущие день, месяц и год в формате 'год.месяц.день'.
+// Если день цифра до 10, то выводим в формате 01, 02 ...
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task27 = () => { 
+                let now = new Date ();
+                let strRes = now.getFullYear() + ".";
+                now.getMonth() + 1 < 10 ? strRes += "0" + (now.getMonth() + 1) : strRes += (now.getMonth() + 1);
+                now.getDate() < 10 ? strRes += ".0" + now.getDate() : strRes += "." + now.getDate();
+                alert(strRes);
+            }
+
+            task27(); // 
+        </script>
+
+    </body>
+
+</html>

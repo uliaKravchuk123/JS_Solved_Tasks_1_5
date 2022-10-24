@@ -1,0 +1,36 @@
+// Task 31:
+//Напишите функцию, которая по дате рождения в формате '2014-12-31' расчитывает сколько дней осталось до дня рожденияз
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task31 = (str) => { 
+                let now = new Date();
+                let birthday = new Date(str);
+                let supposedCelebratDay = new Date(now.getFullYear(), birthday.getMonth(), birthday.getDate());
+
+                // если др в этом году
+                if (supposedCelebratDay > now) {
+                    return Math.trunc((supposedCelebratDay - now)/86400000);
+                };
+
+                // если др в следующем году
+                supposedCelebratDay = new Date (now.getFullYear() + 1, birthday.getMonth(), birthday.getDate());
+                return Math.trunc((supposedCelebratDay - now)/86400000);
+            }
+
+            let date = '2014-12-31';
+            alert(task31(date)); // 67 
+
+            let date2 = '2014-10-24';
+            alert(task31(date2)); // 67 
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,24 @@
+// Task 13:
+// Дана переменная в формате даты (new Date(2021, 1, 21)). Напишите функцию, которая выводит текстовое представление дня недели
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task13 = (date) => { 
+                let dayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thirsday', 'Friday', 'Saturday'];
+                return dayNames[date.getDay()];
+            }
+
+            let date = new Date(2021, 1, 21);
+            alert(task13(date)); // Sunday
+
+        </script>
+
+    </body>
+
+</html>

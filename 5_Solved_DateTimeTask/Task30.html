@@ -1,0 +1,24 @@
+// Task 30:
+//Выведите на экран количество секунд, которое осталось до конца дня.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task30 = () => { 
+                let now = new Date();
+                let tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+                let diff = tomorrow - now; 
+                alert(Math.round(diff / 1000)); 
+            }
+
+            task30(); // 
+        </script>
+
+    </body>
+
+</html>

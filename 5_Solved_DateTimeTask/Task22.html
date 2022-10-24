@@ -1,0 +1,23 @@
+// Task 22:
+// Дана переменная в формате даты и время с тайм зоной. Напишите функцию, которая преобразует дату и время в текущую тайм зону
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task22 = (str) => { 
+                let date = new Date(Date.parse(str));
+                return date;
+            }
+
+            let date = '2012-01-26T13:51:50.417-07:00';
+            alert(task22(date)); // 
+        </script>
+
+    </body>
+
+</html>

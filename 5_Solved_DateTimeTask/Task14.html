@@ -1,0 +1,24 @@
+// Task 14:
+// Дана переменная в формате даты (new Date(2021, 1, 21)). Напишите функцию, которая выводит текстовое представление месяца
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task14 = (date) => { 
+                let monthNames = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+                return monthNames[date.getMonth()];
+            }
+
+            let date = new Date(2021, 1, 21);
+            alert(task14(date)); // Февраль
+
+        </script>
+
+    </body>
+
+</html>

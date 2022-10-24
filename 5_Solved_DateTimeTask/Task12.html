@@ -1,0 +1,23 @@
+// Task 12:
+// Дана переменная в формате даты (new Date(2021, 1, 21)). Напишите функцию, которая вычисляет количество полных лет
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task12 = (date) => { 
+                return date.getFullYear() - 1;
+            }
+
+            let date = new Date(2021, 1, 21);
+            alert(task12(date)); // 2020
+
+        </script>
+
+    </body>
+
+</html>

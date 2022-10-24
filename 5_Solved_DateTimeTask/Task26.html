@@ -1,0 +1,39 @@
+// Task 26:
+// Дана строка. Напишите функцию, которая проверяет является ли строка верной датой. В случае если нет, выведите ошибку с пояснением, что конкретно пошло не так
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task26 = (str) => { 
+                let rightDate = Date.parse(new Date ("2020-01-26"));
+                //alert(new Date (2020, 0, 26));
+                let currentDate = Date.parse(str);
+                //alert(rightDate + "      " + currentDate);
+
+                if (isNaN(currentDate)) return "ERROR enter"; // проверяю дата ли
+                else if (currentDate == rightDate) return "date is correct";
+                else if (currentDate < rightDate) return "date is less than right date";
+                else if (currentDate > rightDate) return "date is more than right date";
+            }
+
+            let date = "2020-01-26";
+            alert(task26(date)); // date is correct
+
+            let date2 = "str";
+            alert(task26(date2)); // ERROR enter
+
+            let date3 = "2022-01-26";
+            alert(task26(date3)); // date is more than right date
+
+            let date4 = "2019-01-26";
+            alert(task26(date4)); // date is less than right date
+        </script>
+
+    </body>
+
+</html>

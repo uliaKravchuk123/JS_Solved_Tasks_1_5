@@ -1,0 +1,44 @@
+// Task 8:
+// Дано количество минут. Напишите функцию, которая конфертирует минуты в часы и минуты
+// Ответ: "2 часа и 34 минуты"
+// Обратите внимание на окончания
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task8 = (min) => { 
+                let hours = Math.trunc(min / 60);
+                let minutes = min % 60;
+                let result = hours;
+
+                let chasEnd = [1, 21, 31, 41, 51, 61, 71, 81, 91, 101];
+                let chasovEnd = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+                if (chasEnd.includes(hours)) result += " час ";
+                else if (chasovEnd.includes(hours)) result += " часов ";
+                else result += " часа ";
+
+                let minutiEnd = [2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44, 52, 53, 54, 62, 63, 64, 72, 73, 74, 82, 83, 84, 92, 93, 94];
+                let minutaEnd = [1, 21, 31, 41, 51, 61, 71, 81, 91];
+                
+                result += minutes;
+                if (minutiEnd.includes(minutes)) result += " минуты";
+                else if (minutaEnd.includes(minutes)) result += " минута";
+                else result += " минут";
+
+                return result;
+
+            }
+
+            alert(task8(61)); // 1 час 1 минута
+            alert(task8(100)); // 1 час 40 минут
+        </script>
+
+    </body>
+
+</html>

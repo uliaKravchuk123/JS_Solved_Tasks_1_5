@@ -1,0 +1,24 @@
+// Task 11:
+//Напишите функцию, которая вычисляет количество дней с начала года
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task11 = () => { 
+                let now = new Date();
+                let newYear = new Date(now.getFullYear(), 0, 1);
+                let countdays = Math.trunc((now - newYear) / 86400000);
+                alert(countdays + " - столько дней прошло с начала года");
+            }
+
+            task11(); // 
+        </script>
+
+    </body>
+
+</html>

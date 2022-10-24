@@ -1,0 +1,42 @@
+// Task 3:
+// Даны 2 строки с датой в формате dd/mm/yyyy. Напишите функцию, которая выводит какая дата больше
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task3 = (str1, str2) => { 
+                let arrDate1 = str1.split('/');
+                let arrDate2 = str2.split('/');
+
+                if (+arrDate1[2] > +arrDate2[2]) return str1 + " больше";
+                else if (+arrDate1[2] < +arrDate2[2]) return str2 + " больше";
+                else {
+                    if (+arrDate1[1] > +arrDate2[1]) return str1 + " больше";
+                    else if (+arrDate1[1] < +arrDate2[1]) return str2 + " больше";
+                    else {
+                        if (+arrDate1[0] > +arrDate2[0]) return str1 + " больше";
+                        else if (+arrDate1[0] < +arrDate2[0]) return str2 + " больше";
+                        else return "даты равны"
+                    }
+                } 
+            }
+
+            let date1 = "01/02/2022";
+            let date2 = "01/02/2023";
+            let date3 = "01/03/2022";
+            let date4 = "03/02/2022";
+
+            alert(task3(date1, date2)); //01/02/2023 больше
+            alert(task3(date1, date3)); //01/03/2022 больше
+            alert(task3(date1, date4)); //03/02/2022 больше
+            alert(task3(date1, date1)); //даты равны
+        </script>
+
+    </body>
+
+</html>

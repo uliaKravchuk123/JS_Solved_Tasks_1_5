@@ -1,0 +1,38 @@
+// Task 21:
+// Дана переменная в формате даты (new Date(2021, 1, 21)). Напишите функцию, которая выводит дату в виде строке в зависимости от переданного формата и разделителя:
+// short: формате dd.mm.yy
+// full: формате dd.mmm.yyyy
+// Разделители: "-", "/", "."
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task21 = (date, format, delim) => { 
+                let dateStr = "";
+
+                if (format == "short") {
+                    dateStr += date.getDate() + delim + (date.getMonth() + 1) + delim + (delim + date.getFullYear()).slice(3, 5);
+                }
+
+                else if (format == "full") {
+                    dateStr += date.getDate() + delim + (date.getMonth() + 1) + delim + date.getFullYear();
+                }
+                
+                return dateStr;
+            }
+
+            let date = new Date(2021, 10, 21);
+            alert(task21(date, 'short', "-")); // 21-11-21
+            alert(task21(date, 'full', "/")); // 21/11/2021
+            alert(task21(date, 'short', ".")); //21.11.21
+
+        </script>
+
+    </body>
+
+</html>
