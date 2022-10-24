@@ -1,0 +1,28 @@
+// Task 9:
+// Дан массив с числами. Не используя метода reverse переверните его элементы в обратном порядке.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task9 = (arr) => {
+                let arrRevers = [];
+                arr.forEach(function(item){
+                    arrRevers.unshift(item);
+                });
+                return arrRevers;
+            }
+
+            alert(task9([23.5, 10, -1, 60, -60, 12.3, 0, -55, 30]));
+            alert(task9([1.1, 2, -3, 2]));
+            alert(task9([1.1, 2, 2, 8, 19]));
+
+        </script>
+
+    </body>
+
+</html>

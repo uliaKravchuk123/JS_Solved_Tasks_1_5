@@ -1,0 +1,38 @@
+// Task 46:
+//Рост 22 учеников класса представлен в виде массива. Рост мальчиков условно задан отрицательными числами. Определить средний рост мальчиков и средний рост девочек.
+// Не использовать цикл
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task46 = (arr) => {  
+                let countBoys = 0;
+                let sumBoys = 0;
+                let countGirls = 0;
+                let sumGirls = 0;
+                arr.map(item => {
+                    if (item < 0) {
+                        sumBoys -= item;
+                        countBoys++;
+                    };
+                    if (item > 0) {
+                        sumGirls += item;
+                        countGirls++;
+                    }
+                });
+                return `Средний рост мальчиков ${sumBoys/countBoys} \n Cредний рост девочек ${sumGirls/countGirls}`;
+            }
+
+
+            alert(task46([1.70, -1.70, 1.80, -1.80])); //523
+    
+        </script>
+
+    </body>
+
+</html>

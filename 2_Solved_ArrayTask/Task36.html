@@ -1,0 +1,32 @@
+// Task 36:
+// Напишите функцию, которая сравнивает два массива и возвращает true, если они идентичны.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task36 = (arr1, arr2) => {  
+               if (arr1.length != arr2.length) return false;
+               
+               for (let i = 0; i < arr1.length; i++) {
+               if (arr1[i] != arr2[i]) return false;
+               }
+
+               return true;
+
+            }
+
+
+            alert(task36([1, 10, 22, 60, 36, 60, 18, 60, 0, 30, 30, 98, 98], [123, 432])); //false
+            alert(task36([-6, 2, 2, 8, 9, 2], [-6, 2, 2, 8, 9, 2])); //true
+            alert(task36([1, 0, 3, 4, 0, -1, 6, 0, 9, 0, 3, 0], [1, 0, 3, 4, 0, -1, 6, 0, 9, 0, 3, 1])); //false
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,31 @@
+// Task 35:
+// Напишите функцию, которая заполняет новый массив предоставленным значением.
+// Описание задачи: Напишите функцию, которая заполняет новый массив предоставленным значением.
+// Например: (3, 'a') => ['a', 'a', 'a']
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task35 = (count, value) => {  
+                let result = [];
+                for (let i = 0; i < count; i++) {
+                    result[i] = value;
+                }
+                return result;
+            }
+
+
+            alert(task35(10, "hello")); //hello,hello,hello,hello,hello,hello,hello,hello,hello,hello
+            alert(task35(3, true)); //true,true,true
+            alert(task35(10, 1000)); //1000,1000,1000,1000,1000,1000,1000,1000,1000,1000
+
+        </script>
+
+    </body>
+
+</html>

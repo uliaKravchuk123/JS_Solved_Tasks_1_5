@@ -1,0 +1,32 @@
+// Task 3: 
+// дан список целых чисел. Найти индекс и значение минимального элемента
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task3 = (arr) => {
+                let min = arr[0];
+                let minIndex = 0;
+                arr.forEach(function(item, index){
+                    if (item < min) {
+                        min = item;
+                        minIndex = index;
+                    }
+                });
+                return ` Индекс минимального элемента: ${minIndex}\n Значение минимального элемента: ${min}`;
+                
+            }
+
+            alert(task3([235, 654, -1, 66, -19, 684, 0, -55, -66]));
+            alert(task3([1, 2, 3]));
+
+        </script>
+
+    </body>
+
+</html>

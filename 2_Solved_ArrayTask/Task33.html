@@ -1,0 +1,25 @@
+// Task 33:
+// Напишите функцию, которая удаляет дублирующие элементы из массива 
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task33 = (arr) => {  
+                return arr.filter((item, index) => arr.indexOf(item) === index);
+            }
+
+
+            alert(task33([1, 10, 22, 60, 36, 60, 18, 60, 0, 30, 30, 98, 98])); //1,10,22,60,36,18,0,30,98
+            alert(task33([-6, 2, 2, 8, 9, 2])); //-6,2,8,9
+            alert(task33([1, 0, 3, 4, 0, -1, 6, 0, 9, 0, 3, 0])); //1,0,3,4,-1,6,9
+
+        </script>
+
+    </body>
+
+</html>

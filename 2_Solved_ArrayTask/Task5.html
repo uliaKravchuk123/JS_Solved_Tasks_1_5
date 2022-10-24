@@ -1,0 +1,27 @@
+// Task 5: 
+// Дан массив целых чисел. Необходимо вычислить сумму целых положительных чисел
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task5 = (arr) => {
+                let sum = 0;
+                arr.forEach(function(item){
+                    if (item % 1 == 0 && item > 0) sum += item;
+                });
+                return sum;
+            }
+
+            alert(task5([23.5, 10, -1, 60, -1.9, 12.3, 0, -55, 30]));
+            alert(task5([1.1, 2, -3, 0]));
+
+        </script>
+
+    </body>
+
+</html>

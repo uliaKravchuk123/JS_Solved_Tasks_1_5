@@ -1,0 +1,31 @@
+// Task 19:
+// Даны 2 массива. Напишите функцию, которая возвращает объедененный массив, который не содержит дублированных элементов
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task19 = (arr1, arr2) => {
+                let arrMul = arr1.concat(arr2);
+                let arrRes = [];
+
+                for (let i = 0; i < arrMul.length; i++){
+                    if (!arrMul.includes(arrMul[i], i+1)) arrRes.push(arrMul[i]);
+                }
+
+                return arrRes;
+            }
+
+            alert(task19([1, 2, 3], [3, 4, 5])); // 1, 2, 3, 4, 5
+            alert(task19([-6, 2, -3, 2], [-6, 4, 5, -3])); // 2,-6,4,5,-3
+            alert(task19([1, 2, 3, 4, 0, -1], [8, 9])); // 1,2,3,4,0,-1,8,9
+
+        </script>
+
+    </body>
+
+</html>

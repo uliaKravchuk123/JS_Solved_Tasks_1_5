@@ -1,0 +1,28 @@
+// Task 4: 
+// Дан массив целых чисел. Необходимо удалить все четные числа
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task4 = (arr) => {
+                let arr2 = [];
+                arr.forEach(function(item, index){
+                    if (item % 2 != 0) arr2.push(item);
+                });
+                arr = arr2;
+                return arr;
+            }
+
+            alert(task4([235, 654, -1, 66, -19, 684, 0, -55, -66]));
+            alert(task4([1, 2, 3]));
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,31 @@
+// Task 38:
+// Напишите функцию, которая разделяет массив на части заданного размера
+// Например: ([1, 2, 3, 4, 5], 2) => [[1, 2], [3, 4], [5]]
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task38 = (arr, size) => {  
+               let result = [];
+               let index = 0;
+               while (index < arr.length) {
+                result.push(arr.slice(index, index + size));
+                index += size;
+               }
+               return "1й подмассив: " + result[0] + " \n2й подмассив: " + result[1];
+            
+            }
+
+
+            alert(task38([1, 2, 3, 4, 5], 2)); //[[1, 2], [3, 4], [5]]
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,33 @@
+// Task 18:
+// Напишите функцию, которая удаляет повторяющиеся элементы массива
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task18 = (arr) => {
+                let arrRes = [];
+
+                arr.forEach(item => {
+                    if(arr.indexOf(item) == arr.lastIndexOf(item)) arrRes.push(item);
+                });
+
+
+                return arrRes;
+                
+            }
+
+            alert(task18([23.5, 10, 10, 60, 60, 12.3, 0, 0, 30]));
+            alert(task18([-6, 2, -3, 2]));
+            alert(task18([1, 0, 3, 4, 0, -1, 6, 0, 9]));
+
+        </script>
+
+    </body>
+
+</html>

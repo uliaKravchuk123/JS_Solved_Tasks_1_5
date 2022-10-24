@@ -1,0 +1,47 @@
+// Task 23:
+// Дан массив объектов. Напишите функцию, которая принимает название свойства и возвращает массив, который содержит все значения данного свойства. 
+// !! Предусмотреть ситуацию, когда такое свойство не найдено
+// books = [
+// { author: "Хэленка", title: "Улетела" },
+// { author: "Коул", title: "Аркан" },
+// { author: "Райчел М", title: "Золотая" },
+// ];
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task22 = (arr, property) => {
+                let result = [];
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i].hasOwnProperty(property)) result.push(arr[i][property]);
+                    else result = "В данном массиве нет такого свойства";
+                }
+
+                return result;
+
+               
+            }
+
+            books = [
+                { author: "Хэленка", title: "Улетела" },
+                { author: "Коул", title: "Аркан" },
+                { author: "Райчел М", title: "Золотая" },
+            ];
+
+            //alert(books[0].author);
+            alert(task22(books, 'author')); //Хэленка,Коул,Райчел М
+            alert(task22(books, 'title')); //Улетела,Аркан,Золотая
+            alert(task22(books, 'HELLO'));
+
+            
+
+        </script>
+
+    </body>
+
+</html>

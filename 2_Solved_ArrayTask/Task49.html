@@ -1,0 +1,34 @@
+// Task 49
+// Дан массив
+// ['| Sofia | 300', '| Veliko Tarnovo | 500', '| Yambol | 275']
+// Напишите функцию, которая выводит "Sofia, Veliko Tarnovo, Yambol = 1075"
+
+!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task49 = (arr) => {  
+               let res = arr.map(item => item.split(" | ")); // [[| Sofia,300],[| Veliko Tarnovo,500],[| Yambol,275]]
+               let answer = "";
+               let sum = 0;
+               for (let i = 0; i < res.length; i++) {
+                    answer = answer + res[i][0].slice(2) + ", "; // "Sofia, Veliko Tarnovo, Yambol, "
+                    sum += +res[i][1];
+               }
+               answer = answer.slice(0, -2) + " = " + sum;
+               return answer;
+            }
+
+
+            alert(task49(['| Sofia | 300', '| Veliko Tarnovo | 500', '| Yambol | 275'])); //"Sofia, Veliko Tarnovo, Yambol = 1075"
+            
+    
+        </script>
+
+    </body>
+
+</html>

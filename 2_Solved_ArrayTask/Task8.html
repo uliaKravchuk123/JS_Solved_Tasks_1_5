@@ -1,0 +1,32 @@
+// Task 8:
+// Дан массив целых чисел. Напишите функцию, которая проверяет есть ли в нем два одинаковых числа подряд. 
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task8 = (arr) => {
+                let previousItem = "";
+                let answer = "В массиве нет двух одинаковых чисел подряд";
+                arr.forEach(function(item){
+                    if (item == previousItem) {
+                        answer = "В массиве есть 2 одинаковых числа подряд";
+                    }
+                    previousItem = item;
+                });
+                return answer;
+            }
+
+            alert(task8([23.5, 10, -1, 60, -60, 12.3, 0, -55, 30]));
+            alert(task8([1.1, 2, -3, 2]));
+            alert(task8([1.1, 2, 2, 8, 19]));
+
+        </script>
+
+    </body>
+
+</html>

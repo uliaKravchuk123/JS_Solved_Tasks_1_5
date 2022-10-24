@@ -1,0 +1,27 @@
+// Task 34:
+// Найдите високосные годы в заданном диапазоне лет
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task34 = (year1, year2) => {  
+               let result = [];
+               for (let i = year1; i <= year2; i++) {
+                if ((i % 4 == 0 && i % 100 != 0) || (i % 100 == 0 && i % 400 == 0)) result.push(i);
+               }
+               return result;
+            }
+
+
+            alert(task34(2000, 2022)); //1,10,22,60,36,18,0,30,98
+
+        </script>
+
+    </body>
+
+</html>

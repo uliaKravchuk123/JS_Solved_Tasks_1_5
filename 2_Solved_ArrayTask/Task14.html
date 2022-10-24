@@ -1,0 +1,26 @@
+// Task 14:
+// Дан массив с числами. Напишите функцию, которая удаляет число на месте N в массиве
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task14 = (arr, N) => {
+                if (N > arr.length) return "N не может быть больше либо равен длине массива";
+                arr.splice(N, 1);
+                return arr;
+            }
+
+            alert(task14([23.5, 10, -1, 60, -60, 12.3, 0, -55, 30], 0));
+            alert(task14([1.1, 2, -3, 2], 5));
+            alert(task14([1.1, 2, 2, 8, 19], 2));
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,37 @@
+// Task 22:
+// Дан массив объектов. Напишите функцию, которая отсортирует массив объектов book по значению свойства title.
+// books = [
+// { author: "Хэленка", title: "Улетела" },
+// { author: "Коул", title: "Аркан" },
+// { author: "Райчел М", title: "Золотая" },
+// ];
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task22 = (arr) => {
+                arr.sort((a, b) => a.title > b.title ? 1 : -1);    
+            }
+
+            books = [
+                { author: "Хэленка", title: "Улетела" },
+                { author: "Коул", title: "Аркан" },
+                { author: "Райчел М", title: "Золотая" },
+            ];
+
+            task22(books);
+            alert(books[0].author); //"Коул"
+            alert(books[1].author); //"Райчел М"
+            alert(books[2].author); //"Хэленка"
+            
+
+        </script>
+
+    </body>
+
+</html>

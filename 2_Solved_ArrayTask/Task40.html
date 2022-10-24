@@ -1,0 +1,42 @@
+// Task 40:
+// Напишите функцию, которая находит количество элементов между максимальным и минимальным элементом.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task40 = (arr) => {
+                let max = arr[0];
+                let maxIndex = 0;
+                let min = arr[0];
+                let minIndex = 0;
+
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] > max) {
+                        max = arr[i];
+                        maxIndex = i;
+                    }
+                    if (arr[i] < min) {
+                        min = arr[i];
+                        minIndex = i;
+                    }
+                }
+                return Math.abs(maxIndex - minIndex) - 1;
+            }
+
+            alert(task40([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));//8
+            alert(task40([10, 20, 30, 40, 50, 60, 70, 80, 90])); //7
+            alert(task40([100, 2, 3, 4, 5, 6, -6, 8, 9, 10]));//5
+
+            
+
+        </script>
+
+    </body>
+
+</html>
+

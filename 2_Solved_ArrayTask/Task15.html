@@ -1,0 +1,36 @@
+// Task 15:
+// Дан массив с числами. Напишите функцию, которая находит второй наименьший элемент в массиве.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task15 = (arr) => {
+                let min, min2;
+                min = Math.min(arr[0], arr[1]);
+                min2 = Math.max(arr[0], arr[1]);
+
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] < min) {
+                        min2 = min;
+                        min = arr[i];
+                    }
+                    if (arr[i] > min && arr[i] < min2) min2 = arr[i];
+                }
+                
+                return min2;
+            }
+
+            alert(task15([23.5, 10, -1, 60, -60, 12.3, 0, -55, 30]));
+            alert(task15([-6, 2, -3, 2]));
+            alert(task15([1, 2, 3, 4, 0, -1]));
+
+        </script>
+
+    </body>
+
+</html>

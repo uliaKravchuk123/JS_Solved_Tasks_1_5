@@ -1,0 +1,41 @@
+// Task 51
+// Напишите функцию, которая получает массив емейлов и генерирует из него массив userName
+//['peshoo@gmail.com', 'todor_43@mail.dir.bg', 'foo@bar.com']	 =>  [peshoo.gc, todor_43.mdb, foo.bc]
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task51 = (emailArr) => { 
+               let userNameArr = [];
+               let arr = [];
+               
+               for (let i = 0; i < emailArr.length; i++) {
+                    arr = emailArr[i].split("@");
+                    arr[1] = arr[1].split(".");
+                    let item = arr[0] + ".";
+    
+                    for (let j = 0; j < arr[1].length; j++) {
+                        item += arr[1][j][0]; // первая итерация: arr = [peshoo, [gmail, com]]; 
+                        
+                    }
+
+                    userNameArr.push(item);
+               }
+               
+               return userNameArr; 
+               
+            }
+
+            alert(task51(['peshoo@gmail.com', 'todor_43@mail.dir.bg', 'foo@bar.com'])); //[peshoo.gc, todor_43.mdb, foo.bc]
+    
+        </script>
+
+    </body>
+
+</html>

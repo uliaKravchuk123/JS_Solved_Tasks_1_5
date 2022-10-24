@@ -1,0 +1,28 @@
+/ Task 13:
+// Дан массив с числами. Напишите функцию, которая вставляет число на место N в массиве
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task13 = (arr, N, number) => {
+
+                if (N > arr.length) return "N не может быть больше либо равен длине массива";
+                arr.splice(N, 0, number);
+                return arr;
+            }
+
+            alert(task13([23.5, 10, -1, 60, -60, 12.3, 0, -55, 30], 0, 3333));
+            alert(task13([1.1, 2, -3, 2], 5, 1111));
+            alert(task13([1.1, 2, 2, 8, 19], 2, 123));
+
+        </script>
+
+    </body>
+
+</html>

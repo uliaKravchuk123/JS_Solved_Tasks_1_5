@@ -1,0 +1,32 @@
+// Task 21:
+// Напишите функцию, которая очищает массив от ложных значений: false, null, undefined, 0, –0, NaN и "" 
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task21 = (arr) => {
+                let arrRes = [];
+                let arrErr = [false, null, undefined, 0, NaN, ""]
+
+                for (let i = 0; i < arr.length; i++){
+                    if (!arrErr.includes(arr[i])) arrRes.push(arr[i]);
+                }
+
+                return arrRes;
+                
+            }
+
+            alert(task21([NaN, 0, 77, false, -17, '',undefined, 99, null])); //77,-17,99
+            alert(task21([-6, 2, -3, 2])); //36,4,9,4
+            alert(task21([1, 0, 3, 4])); //1,0,9,16
+
+        </script>
+
+    </body>
+
+</html>

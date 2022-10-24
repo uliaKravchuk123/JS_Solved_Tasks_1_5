@@ -1,0 +1,39 @@
+// Task 7: 
+// Напишите функцию, которая возвращает произведение всех отрицательных чисел в массиве
+// Написать решение в 1-у строку
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task7 = (arr) => {
+                let multiString = "";
+                let multiAnswer = 1;
+                arr.forEach(function(item){
+                    if (item < 0) {
+                        multiString = multiString + "(" + item + ")" + "*";
+                        multiAnswer *= item;
+                    }
+                });
+                if (multiString === "") {
+                    multiAnswer = 0;
+                    multiString = 0;
+                }
+                else multiString = multiString.slice(0, multiString.length - 1);
+
+                return multiString + " = " + multiAnswer;
+            }
+
+            alert(task7([23.5, 10, -1, 60, -2, 12.3, 0, -55, 30]));
+            alert(task7([1.1, 2, -3, 0]));
+            alert(task7([1.1, 2, 0]));
+
+        </script>
+
+    </body>
+
+</html>

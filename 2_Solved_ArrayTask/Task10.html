@@ -1,0 +1,26 @@
+// Task 10:
+// Дан массив с числами. Выведите последовательно его элементы используя рекурсию и не используя цикл
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task10 = (arr) => {
+                alert (arr.shift());
+                if (arr.length != 0) task10(arr);
+
+            }
+
+            //alert(task10([23.5, 10, -1, 60, -60, 12.3, 0, -55, 30]));
+            task10([1.1, 2, -3, 2]);
+            atask10([1.1, 2, 2, 8, 19]);
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,30 @@
+// Task 2:
+// дан список целый чисел. Получить новый список, состоящий из элементов старого списка, циклически сдвинутых вправо на одну позицию. 
+// Пример: [1, 2, 3], [3, 1, 2]
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task2 = (arr) => {
+                let arr2 = [];
+                arr2.push(arr[arr.length - 1]);
+                arr.forEach(function(item){
+                   if (item == arr[arr.length - 1]) return;
+                   arr2.push(item);
+                });
+                return arr2;
+            }
+
+            alert(task2([235, 654, -1, 66, -19, 684, 0, -55, -66]));
+            alert(task2([1, 2, 3]));
+
+        </script>
+
+    </body>
+
+</html>

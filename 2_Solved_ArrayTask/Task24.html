@@ -1,0 +1,30 @@
+// Task 24:
+// Дан массив. Напишите функцию, которая удаляет все вхождения значения N
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task24 = (arr, N) => {
+                let result = [];
+                arr.forEach((item) => {
+                    if (item != N) result.push(item);
+                }); 
+                 
+                return result;
+            }
+
+            alert(task24([23.5, 33, -1, 60, 33, 12.3, 0, 33, 30], 33)); //23.5,-1,60,12.3,0,30
+            alert(task24([1, 1, 1, 1, 1, 1, 1, 1, 1, 0], 1)); // 0
+            
+
+        </script>
+
+    </body>
+
+</html>
+

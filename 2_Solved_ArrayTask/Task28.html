@@ -1,0 +1,32 @@
+// Task 28:
+// Напишите функцию, которая возвращает массив c заданной длинной из случайных чисел от N до M
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task28 = (length, N, M) => {
+                let result = [];
+                for (let i = 0; i < length; i++) {
+                    result[i] =  Math.floor(N + Math.random()*(M - N + 1));
+                }
+                return result;
+            }
+
+            alert(task28(5, 1, 10)); //
+            alert(task28(6, 1, 4)); //
+            alert(task28(10, 4, 19)); //
+
+            
+            
+           
+
+        </script>
+
+    </body>
+
+</html>

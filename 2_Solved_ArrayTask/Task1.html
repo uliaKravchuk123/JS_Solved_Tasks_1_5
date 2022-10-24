@@ -1,0 +1,26 @@
+// Task 1:
+// дан список целых чисел.Подсчитать количество отрицательных элементов
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task1 = (arr) => {
+                let count = 0;
+                arr.forEach(function(item){
+                    item < 0 ? count++ : count;
+                });
+                return count;
+            }
+
+            alert(task1([235, 654, -1, 66, -19, 684, 0, -55, -66]));
+
+        </script>
+
+    </body>
+
+</html>

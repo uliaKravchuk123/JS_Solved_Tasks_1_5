@@ -1,0 +1,48 @@
+// Task 32:
+//Напишите функцию, которая находит наиболее частый элемент массива
+// Результат в виде:  "элемент = 'B' встречается 5 раз"
+// Учтите различие в слове "раз":  2 раза, 3 раза,  6 раз ....
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task32 = (arr) => {  
+                let count = 1;
+                let countMax = 0;
+                let itemMax;
+
+                arr.sort();
+
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] == arr[i+1]) count++;
+                    else {
+                        if (countMax < count) {
+                            countMax = count;
+                            itemMax = arr[i];
+                            count = 1;
+                        } 
+                    }
+                }
+
+                let answer = `элемент = '${itemMax}' встречается ${countMax} раз`;
+                let raza = [2, 3, 4, 22, 23, 24, 32, 33, 34, 42, 43, 44, 52, 53, 54, 62, 63, 64, 72, 73, 74, 82, 83, 84, 92, 93, 94];
+                if (raza.includes(countMax)) answer += "а";
+                
+                return (answer);
+            }
+
+
+            alert(task32([1, 10, 22, 60, 36, 60, 18, 60, 0, 30, 30, 98, 98])); //элемент = '60' встречается 3 разa
+            alert(task32([-6, 2, 2, 8, 9, 2])); //элемент = '2' встречается 3 разa
+            alert(task32([1, 0, 3, 4, 0, -1, 6, 0, 9, 0, 3, 0])); //элемент = '0' встречается 5 раз
+
+        </script>
+
+    </body>
+
+</html>

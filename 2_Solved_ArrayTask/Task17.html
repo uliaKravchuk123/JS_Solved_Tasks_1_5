@@ -1,0 +1,26 @@
+// Task 17:
+// Напишите функцию, которая клонирует заданный массив
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task17 = (arr) => {
+                let arr2 = arr.map(item => item);
+
+                return `First array:      ${arr} \nSecond array: ${arr2} `; 
+            }
+
+            alert(task17([23.5, 10, -1, 60, -60, 12.3, 0, -55, 30]));
+            alert(task17([-6, 2, -3, 2]));
+            alert(task17([1, 2, 3, 4, 0, -1]));
+
+        </script>
+
+    </body>
+
+</html>

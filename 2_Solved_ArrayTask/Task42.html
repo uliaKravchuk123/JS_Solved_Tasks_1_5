@@ -1,0 +1,25 @@
+// Task 42:
+// Напишите функцию, которая принимает 2 аргумента и возвращает true если element есть среди элементов массива и false в ином случае.
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <script>
+            'use srtict';
+
+            let task42 = (arr, element) => {  
+               return arr.includes(element) ? true : false;
+            }
+
+
+            alert(task42([1, 10, 22, 60, 36, 60, 18, 60, 0, 30, 30, 98, 98], 60)); //true
+            alert(task42([-6, 2, 2, 8, 9, 2], 777)); //false
+            alert(task42([1, 0, 3, 4, 0, -1, 6, 0, 9, 0, 3, 0], "")); //false
+
+        </script>
+
+    </body>
+
+</html>
